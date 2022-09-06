@@ -1,0 +1,229 @@
+﻿/*   Default.aspx  */}
+/*.picture-carousel {
+    height: 100%;
+    width: 100%;
+}
+.carousel-autofit-image {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+body{
+    margin:0;
+    padding:0;
+}*/
+.center {
+    text-align: center;
+}
+div.item img{
+    width:100%;
+    overflow:hidden;
+}
+.center-page{
+    width:300px;
+    height:300px;
+    position:absolute;
+    top:-40px;
+    bottom:0;
+    right:0;
+    left:0;
+    margin:auto;
+}
+.footer-pos{
+    width:auto;
+    height:auto;
+    position:absolute;
+    top:600px;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+}
+
+<!-- View all Products -->
+
+.pro-brand{
+    font-size:15px;
+    font-weight:600;
+    line-height:15px;
+    text-transform:uppercase;
+    font-family:sans-serif;
+}
+.pro-name {
+    font-size: 13px;
+    line-height: 17px;
+    font-family: sans-serif;
+}
+.pro-price {
+    font-size: 14px;
+    line-height: 17px;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+.pro-og-price {
+    font-size: 13px;
+    line-height: 17px;
+    font-family: sans-serif;
+    font-weight: 400;
+    text-decoration:line-through;
+    color:gray;
+}
+.pro-price-discount {
+    font-size: 13px;
+    font-family: sans-serif;
+    font-weight: 400;
+    color: deeppink;
+}
+/* Product View*/
+.pro-name-view {
+    font-size: 20px;
+    line-height: 25px;
+    font-family: sans-serif;
+    color:#696e80
+}
+.pro-og-price-view {
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 400;
+    text-decoration: line-through;
+    color: gray;
+}
+.pro-price-discount-view {
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 400;
+    color: deeppink;
+}
+.pro-price-view {
+    font-size: 16px;
+    line-height: 17px;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin-top:10px;
+}
+.div-det1{
+    border-bottom:1px dashed #ff6a00;
+    margin-bottom:20px;
+}
+h5.size{
+    font-weight:600;
+}
+.radio-btn-items{
+    margin-right:10px;
+    margin-left:10px;
+}
+.main-button{
+    border-radius:3px;
+    outline:0;
+    margin-top:10px;
+    min-height:22px;
+    min-width:180px;
+    font-size:13px;
+    font-weight:500;
+    background-color:#ff5722;
+    border:1px solid #ff5722;
+    color:#fff;
+}
+/*img {
+    max-width: 100%;
+    max-height: 100%;
+      remove extra space below image */
+/*}
+.box {
+    max-width: 4800px;
+}*/
+a:hover{
+    text-decoration:none;
+}
+#btnCart{
+    margin-right:6px;
+}
+/*    Cart css    */
+.remove-cart-button {
+    border-radius: 3px;
+    outline: 0;
+    margin-top: 10px;
+    font-size: 13px;
+    min-height: 22px;
+    min-width: 90px;
+    font-weight: 500;
+    background-color: #FF5722;
+    border: 1px solid #FF5722;
+    color:#fff;
+}
+.price-gray{
+    font-size:15px;
+    font-family:sans-serif;
+    font-weight:400;
+    color:dimgray;
+}
+.price-green {
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 400;
+    color:#20bd99;
+}
+.pro-name-view-cart {
+    font-size: 15px;
+    line-height:25px;
+    font-family: sans-serif;
+    font-weight: 600;
+    color:#696e80;
+}
+.buy-now-btn {
+    border-radius: 3px;
+    outline: 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    min-height: 22px;
+    padding: 10px 15px;
+    font-weight: 500;
+    background-color: #14cda8;
+    color: #fff;
+    border: 1px solid #14cda8;
+    width:100%;
+}
+/*  About.aspx  */
+.jumbotron {
+    background-color: #f4511e;
+    color: #fff;
+    padding: 100px 25px;
+}
+
+.container-fluid {
+    padding: 60px 50px;
+}
+
+.about-company{
+    margin-left:130px;
+}
+
+.bg-grey {
+    background-color: #f6f6f6;
+}
+
+.logo-small {
+    color: #f4511e;
+    font-size: 50px;
+}
+
+.logo {
+    color: #f4511e;
+    font-size: 200px;
+}
+@media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+  }
+
+/* About.aspx media screen */
+
+@media screen and (max-width: 768px) {
+    .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+    }
+}
