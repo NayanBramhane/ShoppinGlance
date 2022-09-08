@@ -244,6 +244,9 @@
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\btnCart.js" />
+    <Content Include="ManDenims.aspx" />
+    <Content Include="ManPants.aspx" />
+    <Content Include="ManShirt.aspx" />
     <Content Include="Payment.aspx" />
     <Content Include="Products.aspx" />
     <Content Include="ProductView.aspx" />
@@ -255,6 +258,9 @@
     <Content Include="Success.aspx" />
     <Content Include="UserHome.aspx" />
     <Content Include="Web.config" />
+    <Content Include="WomanLegging.aspx" />
+    <Content Include="WomanSarees.aspx" />
+    <Content Include="WomanTop.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.cs">
@@ -362,6 +368,27 @@
     <Compile Include="ForgotPassword.aspx.designer.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManDenims.aspx.cs">
+      <DependentUpon>ManDenims.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManDenims.aspx.designer.cs">
+      <DependentUpon>ManDenims.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManPants.aspx.cs">
+      <DependentUpon>ManPants.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManPants.aspx.designer.cs">
+      <DependentUpon>ManPants.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManShirt.aspx.cs">
+      <DependentUpon>ManShirt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManShirt.aspx.designer.cs">
+      <DependentUpon>ManShirt.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Payment.aspx.cs">
       <DependentUpon>Payment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -439,6 +466,27 @@
     </Compile>
     <Compile Include="UserHome.aspx.designer.cs">
       <DependentUpon>UserHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WomanLegging.aspx.cs">
+      <DependentUpon>WomanLegging.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WomanLegging.aspx.designer.cs">
+      <DependentUpon>WomanLegging.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WomanSarees.aspx.cs">
+      <DependentUpon>WomanSarees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WomanSarees.aspx.designer.cs">
+      <DependentUpon>WomanSarees.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WomanTop.aspx.cs">
+      <DependentUpon>WomanTop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WomanTop.aspx.designer.cs">
+      <DependentUpon>WomanTop.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
