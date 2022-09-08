@@ -19,7 +19,7 @@
         </div>
 
         <div class="col-md-5 thumbnail">
-            <div class="box" styel="max-width:40%">
+            <div class="box" style="max-width:40%">
                 <!------------------------------------- Product Image Slider Start ------------------------------------>
 
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">

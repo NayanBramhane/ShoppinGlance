@@ -36,8 +36,8 @@
                         </button>
                         <a class="navbar-brand" href="Default.aspx">
                             <span>
-                                <img src="icons/setting.png" alt="Shoppinglance" height="30" />
-                            </span>Shoppinglance
+                                <img src="icons/setting.png" alt="ShoppinGlance" height="30" />
+                            </span>ShoppinGlance
                         </a>
 
                     </div>
@@ -55,15 +55,15 @@
                                     <li role="separator" class="divider"></li>
                                     <li class="dropdown-header">Men</li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#">Shirts</a></li>
-                                    <li><a href="#">Pants</a></li>
-                                    <li><a href="#">Denims</a></li>
+                                    <li><a href="ManShirt.aspx">Shirts</a></li>
+                                    <li><a href="ManPants.aspx">Pants</a></li>
+                                    <li><a href="ManDenims.aspx">Denims</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li class="dropdown-header">Women</li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#">Top</a></li>
-                                    <li><a href="#">Leggings</a></li>
-                                    <li><a href="#">Denims</a></li>
+                                    <li><a href="WomanTop.aspx">Top</a></li>
+                                    <li><a href="WomanLegging.aspx">Leggings</a></li>
+                                    <li><a href="WomanSarees.aspx">Sarees</a></li>
 
                                 </ul>
                             </li>
@@ -79,6 +79,9 @@
                                 <asp:Button ID="btnLogin" CssClass="btn btn-default navbar-btn" runat="server" Text="Sign In" OnClick="btnLogin_Click"/>
                                 <asp:Button ID="btnlogout" CssClass="btn btn-default navbar-btn" runat="server" Text="Sign Out" OnClick="btnlogout_Click"/>
                                 
+                            </li>
+                            <li>
+                                <asp:Button ID="Button1" CssClass ="btn btn-link navbar-btn " runat="server" Text=""  />
                             </li>
                         </ul>
                     </div>

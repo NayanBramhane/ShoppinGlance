@@ -1,10 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="ShoppingSite.SignUp" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="ShoppingSite.Contact" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>SignUp</title>
+    <title>Contact</title>
+
     <meta charset="utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1" >
     <meta http-equiv="X-UA-Compatible" content="IE-edge" >
@@ -18,8 +19,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <br /><br /><br />
         <div>
-
             <div class="navbar navbar-default navbar-fixed-top" role="navigation">
                 <div class="container">
                     <div class="navbar-header">
@@ -60,8 +61,19 @@
 
                                 </ul>
                             </li>
-                            <li class="active"><a href="SignUp.aspx">SignUp</a></li>
-                            <li><a href="SignIn.aspx">SignIn</a></li>
+                            <%--<li>
+                                <button runat="server" id="btnCart" class="btn btn-primary navbar-btn" type="button">
+                                    
+                                    Cart<span class="badge" id="pCount" runat="server"></span>
+
+                                </button>
+
+                            </li>--%>
+                            <li id="btnSignUp" runat="server"><a href="SignUp.aspx">SignUp</a></li>
+                            <li id="btnSignIn" runat="server"><a href="SignIn.aspx">SignIn</a></li>
+                            <%--<li>
+                                <asp:Button ID="btnlogout" CssClass="btn btn-default navbar-btn" runat="server" Text="Sign Out" OnClick="btnlogout_Click"/>
+                            </li>--%>
                         </ul>
                     </div>
 
@@ -70,44 +82,39 @@
 
         </div>
 
-        <!--SignUp Page Start-->
+        <!-- Contact page start-->
+        <div class="center-page contact">
+            <div class="row row-contact">
+                <asp:Label ID="Label1" CssClass="required contact" runat="server" Text="Your name:"></asp:Label><br />
+                <asp:TextBox ID="TextBox1" CssClass="text-area" runat="server"></asp:TextBox><br />
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Enter your name" ControlToValidate="TextBox1">
 
-        <div class="center-page">
-            <label class="col-xs-11">Username:</label>
-            <div class="col-xs-11">
-                <asp:TextBox ID="txtUname" runat="server" class="form-control" placeholder="Enter Your Username"></asp:TextBox>
+                </asp:RequiredFieldValidator>
+
+            </div>
+        
+            <div class="row row-contact">
+                <asp:Label ID="Label2" CssClass="required contact" runat="server" Text="Your e-mail:"></asp:Label><br />
+                <asp:TextBox ID="TextBox2" CssClass="text-area" runat="server"></asp:TextBox><br />
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Enter your e-mail" ControlToValidate="TextBox2">
+
+                </asp:RequiredFieldValidator>
+
+            </div>
+        
+            <div class="row row-contact">
+                <asp:Label ID="Label3" CssClass="required contact" runat="server" Text="Your message:"></asp:Label><br />
+                <textarea id="TextArea1" class="text-area" runat="server" cols="20" rows="2"></textarea>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Enter your message" ControlToValidate="TextArea1">
+
+                </asp:RequiredFieldValidator>
+
             </div>
 
-            <label class="col-xs-11">Enter Your Full Name:</label>
-            <div class="col-xs-11">
-                <asp:TextBox ID="txtName" runat="server" class="form-control" placeholder="Enter Your Name"></asp:TextBox>
-            </div>
-
-            <label class="col-xs-11">Password:</label>
-            <div class="col-xs-11">
-                <asp:TextBox ID="txtPass" runat="server" class="form-control" TextMode="Password" placeholder="Enter Your Password"></asp:TextBox>
-            </div>
-
-            <label class="col-xs-11">Confirm Password:</label>
-            <div class="col-xs-11">
-                <asp:TextBox ID="txtConPass" runat="server" class="form-control" TextMode="Password" placeholder="Enter Your Password Again"></asp:TextBox>
-            </div>
-
-            <label class="col-xs-11">E-mail:</label>
-            <div class="col-xs-11">
-                <asp:TextBox ID="txtEmail" runat="server" class="form-control" placeholder="Enter Your E-mail" TextMode="Email"></asp:TextBox>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidatorEmail" runat="server" ErrorMessage="Enter valid E-mail address" 
-                    ControlToValidate="txtEmail" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">
-                </asp:RegularExpressionValidator>
-            </div>
-
-            <label class="col-xs-11"></label>
-            <div class="col-xs-11">
-                <asp:Button ID="txtsignup" class="btn btn-success" runat="server" Text="Sign Up" OnClick="txtsignup_Click" />
-            </div>
+            <asp:Button ID="Button1" CssClass="contact-button" runat="server" Text="Send email" />
+            <asp:Label ID="Label4" runat="server" Text=""></asp:Label>
         </div>
-
-        <!--SignUp Page End-->
+        <!-- Contact page start-->
 
         <!--Footer Content Start-->
         <hr />

@@ -211,8 +211,8 @@ namespace ShoppingSite
                     MySqlCommand cmd = new MySqlCommand("Insert into tblPurchase (UserID, PIDSizeID, CartAmount, CartDiscount, TotalPayed, " +
                         "PaymentType, PaymentStatus, DateOfPurchase, Name, Address, Pincode, MobileNumber) values ('" + USERID + "','" + 
                         hdPidSizeID.Value + "','" + hdCartAmount.Value + "','" + hdCartDiscount.Value + "','" + hdTotalPayed.Value + "','" + 
-                        PaymentType + "','" + PaymentStatus + "',SYSDATE(),'" + txtName.Text + "','" + txtAddress.Text + "','" + txtPinCode.Text + 
-                        "','" + txtMobileNumber.Text + "')Select LAST_INSERT_ID()", con);
+                        PaymentType + "','" + PaymentStatus + "',SYSDATE(),'" + txtName.Text.Trim() + "','" + txtAddress.Text + "','" + txtPinCode.Text + 
+                        "','" + txtMobileNumber.Text.Trim() + "')Select LAST_INSERT_ID()", con);
 
                     con.Open();
                     Int64 PurchaseID = Convert.ToInt64(cmd.ExecuteScalar());

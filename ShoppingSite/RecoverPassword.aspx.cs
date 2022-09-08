@@ -71,7 +71,7 @@ namespace ShoppingSite
                 {
                     con.Open();
                     MySqlCommand cmd = new MySqlCommand("Update tblUsers set Password=@p where Uid='" + Uid + "'", con);
-                    cmd.Parameters.AddWithValue("@p", txtNewPass.Text);
+                    cmd.Parameters.AddWithValue("@p", txtNewPass.Text.Trim());
                     cmd.Parameters.AddWithValue("@Uid", Uid);
                     cmd.ExecuteNonQuery();
 
@@ -80,6 +80,10 @@ namespace ShoppingSite
                     Response.Write("<script> alert ('Password reset successfully done');   </script>");
                     Response.Redirect("~/ SignIn.aspx");
                 }
+            }
+            else
+            {
+                Response.Write("<script> alert ('Password doesn't match');   </script>");
             }
         }
     }

@@ -94,7 +94,7 @@
                                 <th>Category</th>
                                 <th>Sub Category</th>
                                 <th>Gender</th>        
-                                <th>Edit</th>
+                                <%--<th>Edit</th>--%>
                             </tr>
                         </thead>
                         
@@ -111,7 +111,7 @@
                                 <td> <%# Eval("CatName") %> </td>
                                 <td> <%# Eval("SubCatName") %> </td>
                                 <td> <%# Eval("GenderName")%></td>
-                                <td>Edit</td>
+                                <%--<td>Edit</td>--%>
                             </tr>
 
                 </ItemTemplate>

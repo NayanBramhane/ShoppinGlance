@@ -61,7 +61,7 @@
                                 <th>#</th>
                                 <th>Sub Category</th>
                                 <th>Main Category</th>
-                                <th>Edit</th>
+                                <%--<th>Edit</th>--%>
                             </tr>
                         </thead>
                         
@@ -75,7 +75,7 @@
                                 <th> <%# Eval("SubCatID") %> </th>
                                 <td> <%# Eval("SubCatName") %> </td>
                                 <td> <%# Eval("CatName") %> </td>
-                                <td>Edit</td>
+                                <%--<td>Edit</td>--%>
                             </tr>
 
                 </ItemTemplate>

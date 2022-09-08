@@ -15,6 +15,7 @@ namespace ShoppingSite
 {
     public partial class AddProduct : System.Web.UI.Page
     {
+        char[] charsToTrim = { ' ', '\t' };
         public static String CS = ConfigurationManager.ConnectionStrings["MyShoppingDB"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -154,16 +155,16 @@ namespace ShoppingSite
             {
                 MySqlCommand cmd = new MySqlCommand("sp_InsertProduct", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("_PName",txtProductName.Text);
-                cmd.Parameters.AddWithValue("_PPrice",txtPrice.Text);
-                cmd.Parameters.AddWithValue("_PSellPrice", txtSellPrice.Text);
+                cmd.Parameters.AddWithValue("_PName",txtProductName.Text.Trim(charsToTrim));
+                cmd.Parameters.AddWithValue("_PPrice",txtPrice.Text.Trim(charsToTrim));
+                cmd.Parameters.AddWithValue("_PSellPrice", txtSellPrice.Text.Trim(charsToTrim));
                 cmd.Parameters.AddWithValue("_PBrandID", ddlBrand.SelectedItem.Value);
                 cmd.Parameters.AddWithValue("_PCategoryID", ddlCategory.SelectedItem.Value);
                 cmd.Parameters.AddWithValue("_PSubCatID", ddlSubCat.SelectedItem.Value);
                 cmd.Parameters.AddWithValue("_PGender", ddlGender.SelectedItem.Value);
-                cmd.Parameters.AddWithValue("_PDescription", txtDescription.Text);
-                cmd.Parameters.AddWithValue("_PProductDetails", txtPDetail.Text);
-                //cmd.Parameters.AddWithValue("_PMaterialCare", txtMatCare.Text);   
+                cmd.Parameters.AddWithValue("_PDescription", txtDescription.Text.Trim(charsToTrim));
+                cmd.Parameters.AddWithValue("_PProductDetails", txtPDetail.Text.Trim(charsToTrim));
+                //cmd.Parameters.AddWithValue("_PMaterialCare", txtMatCare.Text.Trim(charsToTrim));   
                 if (chFD.Checked == true)
                 {
                     cmd.Parameters.AddWithValue("_FreeDelivery", 1.ToString());
@@ -200,7 +201,7 @@ namespace ShoppingSite
                     if (cblSize.Items[i].Selected == true)
                     {
                         Int64 SizeID = Convert.ToInt64(cblSize.Items[i].Value);
-                        int Quantity = Convert.ToInt32(txtQuantity.Text);
+                        int Quantity = Convert.ToInt32(txtQuantity.Text.Trim(charsToTrim));
 
                         MySqlCommand cmd2 = new MySqlCommand("Insert into tblProductSizeQuantity (PID, SizeID, Quantity) values ('" + PID + "','" + 
                             SizeID + "','" + Quantity + "')", con);
@@ -216,10 +217,10 @@ namespace ShoppingSite
                         Directory.CreateDirectory(SavePath);
                     }
                     string Extension = Path.GetExtension(fuImg01.PostedFile.FileName);
-                    fuImg01.SaveAs(SavePath + "\\" + txtProductName.Text.ToString().Trim() + "01" + Extension);
+                    fuImg01.SaveAs(SavePath + "\\" + txtProductName.Text.ToString().Trim(charsToTrim) + "01" + Extension);
 
                     MySqlCommand cmd3 = new MySqlCommand("Insert into tblProductImages (PID, Name, Extension) values ('" + PID + "','" +
-                        txtProductName.Text.ToString().Trim() + "01" + "','" + Extension + "')", con);
+                        txtProductName.Text.ToString().Trim(charsToTrim) + "01" + "','" + Extension + "')", con);
                     cmd3.ExecuteNonQuery();
                 }
                 // 2nd File Upload
@@ -231,10 +232,10 @@ namespace ShoppingSite
                         Directory.CreateDirectory(SavePath);
                     }
                     string Extension = Path.GetExtension(fuImg02.PostedFile.FileName);
-                    fuImg02.SaveAs(SavePath + "\\" + txtProductName.Text.ToString().Trim() + "02" + Extension);
+                    fuImg02.SaveAs(SavePath + "\\" + txtProductName.Text.ToString().Trim(charsToTrim) + "02" + Extension);
 
                     MySqlCommand cmd4 = new MySqlCommand("Insert into tblProductImages (PID, Name, Extension) values ('" + PID + "','" +
-                        txtProductName.Text.ToString().Trim() + "02" + "','" + Extension + "')", con);
+                        txtProductName.Text.ToString().Trim(charsToTrim) + "02" + "','" + Extension + "')", con);
                     cmd4.ExecuteNonQuery();
                 }
                 // 3rd File Upload
@@ -246,10 +247,10 @@ namespace ShoppingSite
                         Directory.CreateDirectory(SavePath);
                     }
                     string Extension = Path.GetExtension(fuImg03.PostedFile.FileName);
-                    fuImg03.SaveAs(SavePath + "\\" + txtProductName.Text.ToString().Trim() + "03" + Extension);
+                    fuImg03.SaveAs(SavePath + "\\" + txtProductName.Text.ToString().Trim(charsToTrim) + "03" + Extension);
 
                     MySqlCommand cmd5 = new MySqlCommand("Insert into tblProductImages (PID, Name, Extension) values ('" + PID + "','" +
-                        txtProductName.Text.ToString().Trim() + "03" + "','" + Extension + "')", con);
+                        txtProductName.Text.ToString().Trim(charsToTrim) + "03" + "','" + Extension + "')", con);
                     cmd5.ExecuteNonQuery();
                 }
                 // 4th File Upload
@@ -261,10 +262,10 @@ namespace ShoppingSite
                         Directory.CreateDirectory(SavePath);
                     }
                     string Extension = Path.GetExtension(fuImg04.PostedFile.FileName);
-                    fuImg04.SaveAs(SavePath + "\\" + txtProductName.Text.ToString().Trim() + "04" + Extension);
+                    fuImg04.SaveAs(SavePath + "\\" + txtProductName.Text.ToString().Trim(charsToTrim) + "04" + Extension);
 
                     MySqlCommand cmd6 = new MySqlCommand("Insert into tblProductImages (PID, Name, Extension) values ('" + PID + "','" +
-                        txtProductName.Text.ToString().Trim() + "04" + "','" + Extension + "')", con);
+                        txtProductName.Text.ToString().Trim(charsToTrim) + "04" + "','" + Extension + "')", con);
                     cmd6.ExecuteNonQuery();
                 }
                 // 5th File Upload
@@ -276,10 +277,10 @@ namespace ShoppingSite
                         Directory.CreateDirectory(SavePath);
                     }
                     string Extension = Path.GetExtension(fuImg05.PostedFile.FileName);
-                    fuImg05.SaveAs(SavePath + "\\" + txtProductName.Text.ToString().Trim() + "05" + Extension);
+                    fuImg05.SaveAs(SavePath + "\\" + txtProductName.Text.ToString().Trim(charsToTrim) + "05" + Extension);
 
                     MySqlCommand cmd7 = new MySqlCommand("Insert into tblProductImages (PID, Name, Extension) values ('" + PID + "','" +
-                        txtProductName.Text.ToString().Trim() + "05" + "','" + Extension + "')", con);
+                        txtProductName.Text.ToString().Trim(charsToTrim) + "05" + "','" + Extension + "')", con);
                     cmd7.ExecuteNonQuery();
                 }
             }
@@ -288,7 +289,11 @@ namespace ShoppingSite
         private void BindGridView()
         {
             MySqlConnection con = new MySqlConnection(CS);
-            MySqlCommand cmd = new MySqlCommand(" select distinct t1.PID,t1.PName,t1.PPrice,t1.PSellPrice,t2.Name as Brand,t3.CatName,t4.SubCatName, t5.GenderName as gender,t6.SizeName,t8.Quantity from tblProducts as t1  inner join tblBrands as t2 on t2.BrandID=t1.PBrandID  inner join tblCategory as t3 on t3.CatID=t1.PCategoryID  inner join tblSubCategory as t4 on t4.SubCatID=t1.PSubCatID   inner join tblGender as t5 on t5.GenderID =t1.PGender   inner join tblSizes as t6 on t6.SubCategoryID=t1.PSubCatID  inner join tblProductSizeQuantity as t8 on t8.PID=t1.PID order by t1.PName", con);
+            MySqlCommand cmd = new MySqlCommand(" select distinct t1.PID,t1.PName,t1.PPrice,t1.PSellPrice,t2.Name as Brand,t3.CatName,t4.SubCatName, " +
+                "t5.GenderName as gender,t6.SizeName,t8.Quantity from tblProducts as t1  inner join tblBrands as t2 on t2.BrandID=t1.PBrandID  " +
+                "inner join tblCategory as t3 on t3.CatID=t1.PCategoryID  inner join tblSubCategory as t4 on t4.SubCatID=t1.PSubCatID   " +
+                "inner join tblGender as t5 on t5.GenderID =t1.PGender   inner join tblSizes as t6 on t6.SubCategoryID=t1.PSubCatID  " +
+                "inner join tblProductSizeQuantity as t8 on t8.PID=t1.PID order by t1.PName", con);
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);

@@ -22,12 +22,12 @@ namespace ShoppingSite
                 Response.Redirect("UserHome.aspx?UserLogin=YES");
             }
 
-            BindCartNumber();
             BindProductRepeater();
             if (Session["Username"] != null)
             {
                 if (!this.IsPostBack)
                 {
+                    BindCartNumber();
                     //lblSuccess.Text = "Login Success, Welcome " + Session["Username"].ToString();
                     btnSignUp.Visible = false;
                     btnSignIn.Visible = false;
@@ -45,20 +45,50 @@ namespace ShoppingSite
                 //Response.Redirect("~/Default.aspx");
                 Response.Write("<script type='text/javascript'>alert('Login plz')</script>");
             }
-        }        
+        }
 
+        //public void BindCartNumber()
+        //{
+        //    if(Request.Cookies["CartPID"] != null)
+        //    {
+        //        string CookiePID = Request.Cookies["CartPID"].Value.Split('=')[1];
+        //        string[] ProductArray = CookiePID.Split(',');
+        //        int ProductCount = ProductArray.Length;
+        //        pCount.InnerText = ProductCount.ToString();
+        //    }
+        //    else
+        //    {
+        //        pCount.InnerText = 0.ToString();
+        //    }
+        //}
         public void BindCartNumber()
         {
-            if(Request.Cookies["CartPID"] != null)
+            if (Session["USERID"] != null)
             {
-                string CookiePID = Request.Cookies["CartPID"].Value.Split('=')[1];
-                string[] ProductArray = CookiePID.Split(',');
-                int ProductCount = ProductArray.Length;
-                pCount.InnerText = ProductCount.ToString();
-            }
-            else
-            {
-                pCount.InnerText = 0.ToString();
+                string UserIDD = Session["USERID"].ToString();
+                DataTable dt = new DataTable();
+                using (MySqlConnection con = new MySqlConnection(CS))
+                {
+                    MySqlCommand cmd = new MySqlCommand("SP_BindCartNumberz", con)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("_UserID", UserIDD);
+                    using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd))
+                    {
+                        sda.Fill(dt);
+                        if (dt.Rows.Count > 0)
+                        {
+                            string CartQuantity = dt.Compute("Sum(Qty)", "").ToString();
+                            pCount.InnerText = CartQuantity;
+
+                        }
+                        else
+                        {
+                            pCount.InnerText = 0.ToString();
+                        }
+                    }
+                }
             }
         }
 

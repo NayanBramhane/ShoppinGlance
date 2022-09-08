@@ -33,8 +33,8 @@ namespace ShoppingSite
 
 
                 MySqlCommand cmd = new MySqlCommand("Select * from tblUsers where Username=@username and Password=@pwd", con);
-                cmd.Parameters.AddWithValue("@username", txtUsername.Text);
-                cmd.Parameters.AddWithValue("@pwd", txtPass.Text);
+                cmd.Parameters.AddWithValue("@username", txtUsername.Text.Trim());
+                cmd.Parameters.AddWithValue("@pwd", txtPass.Text.Trim());
                 MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
@@ -62,21 +62,32 @@ namespace ShoppingSite
                     if(Utype == "User")
                     {
                         Session["Username"] = txtUsername.Text;
+                        Session["USEREMAIL"] = dt.Rows[0]["Email"].ToString();
+                        Session["getFullName"] = dt.Rows[0]["name"].ToString();
+                        Session["LoginType"] = "User";
                         if (Request.QueryString["rurl"] != null)
                         {
                             if (Request.QueryString["rurl"] == "cart")
                             {
-                                Response.Redirect("~/Cart.aspx");
+                                Response.Redirect("Cart.aspx");
+                            }
+
+                            if (Request.QueryString["rurl"] == "PID")
+                            {
+                                string myPID = Session["ReturnPID"].ToString();
+                                Response.Redirect("ProductView.aspx?PID=" + myPID + "");
                             }
                         }
+
                         else
                         {
-                            Response.Redirect("~/UserHome.aspx");
+                            Response.Redirect("UserHome.aspx?UserLogin=YES");
                         }
                     }
                     else if(Utype == "Admin")
                     {
-                        Session["Username"] = txtUsername.Text;
+                        Session["Username"] = txtUsername.Text.Trim();
+                        Session["LoginType"] = "Admin";
                         Response.Redirect("~/AdminHome.aspx");
                     }
                 }

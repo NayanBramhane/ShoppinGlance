@@ -48,15 +48,15 @@
                                 <ul class="dropdown-menu">
                                     <li class="dropdown-header">Men</li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#">Shirts</a></li>
-                                    <li><a href="#">Pants</a></li>
-                                    <li><a href="#">Denims</a></li>
+                                    <li><a href="ManShirt.aspx">Shirts</a></li>
+                                    <li><a href="ManPants.aspx">Pants</a></li>
+                                    <li><a href="ManDenims.aspx">Denims</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li class="dropdown-header">Women</li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#">Top</a></li>
-                                    <li><a href="#">Leggings</a></li>
-                                    <li><a href="#">Denims</a></li>
+                                    <li><a href="WomanTop.aspx">Top</a></li>
+                                    <li><a href="WomanLegging.aspx">Leggings</a></li>
+                                    <li><a href="WomanSarees.aspx">Sarees</a></li>
 
                                 </ul>
                             </li>
@@ -106,9 +106,9 @@
                 <p class ="pull-right "><a href="AdminHome.aspx"> Admin Login  </a></p> 
                 <p>&copy;2022 Nayan Bramhane &middot;
                     <a href="Default.aspx">Home</a> &middot;
-                    <a href="#">About</a> &middot;
-                    <a href="#">Contact</a> &middot;
-                    <a href="#">Products</a>
+                    <a href="About.aspx">About</a> &middot;
+                    <a href="Contact.aspx">Contact</a> &middot;
+                    <a href="Products.aspx">Products</a>
                 </p>
             </div>
         </footer>

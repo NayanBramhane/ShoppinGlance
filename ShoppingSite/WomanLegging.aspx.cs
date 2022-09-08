@@ -14,6 +14,7 @@ namespace ShoppingSite
 {
     public partial class WomanLegging : System.Web.UI.Page
     {
+        char[] charsToTrim = { ' ', '\t' };
         public static String CS = ConfigurationManager.ConnectionStrings["MyShoppingDB"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -119,7 +120,7 @@ namespace ShoppingSite
             string qr = "select A.*,B.*,C.Name ,A.PPrice-A.PSellPrice as DiscAmount,B.Name as ImageName, C.Name as BrandName from tblProducts A " +
                 "inner join tblBrands C on C.BrandID =A.PBrandID inner join tblCategory as t2 on t2.CatID=A.PCategoryID join lateral" +
                 "( select * from tblProductImages B where B.PID= A.PID order by B.PID desc limit 1)B where t2.CatName='Leggings' or " +
-                "t2.CatName='Leggings Western Wear' AND A.PName like '" + txtFilterGrid1Record.Text + "%' order by A.PID desc";
+                "t2.CatName='Leggings Western Wear' AND A.PName like '%" + txtFilterGrid1Record.Text.Trim(charsToTrim) + "%' order by A.PID desc";
             MySqlDataAdapter da = new MySqlDataAdapter(qr, con);
             string text = ((TextBox)sender).Text;
             DataSet ds = new DataSet();

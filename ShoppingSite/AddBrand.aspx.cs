@@ -13,9 +13,13 @@ namespace ShoppingSite
 {
     public partial class AddBrand : System.Web.UI.Page
     {
+        char[] charsToTrim = { ' ', '\t' };
         protected void Page_Load(object sender, EventArgs e)
         {
-            BindBrandRepeater();
+            if (!IsPostBack)
+            {
+                BindBrandRepeater();
+            }
         }
 
         private void BindBrandRepeater()
@@ -37,19 +41,22 @@ namespace ShoppingSite
 
         protected void btnAddBrand_Click(object sender, EventArgs e)
         {
-            using (MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["MyShoppingDB"].ConnectionString))
-            {
-                con.Open();
+            if (txtBrand.Text != null && txtBrand.Text != "" && txtBrand.Text != string.Empty) 
+            { 
+                using (MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["MyShoppingDB"].ConnectionString))
+                {
+                    con.Open();
 
 
-                MySqlCommand cmd = new MySqlCommand("Insert into tblBrands (Name) Values('" + txtBrand.Text + "')", con);
-                cmd.ExecuteNonQuery();
-                Response.Write("<script> alert('Brand Added Successfully');   </script>");
-                txtBrand.Text = string.Empty;
+                    MySqlCommand cmd = new MySqlCommand("Insert into tblBrands (Name) Values('" + txtBrand.Text.Trim(charsToTrim) + "')", con);
+                    cmd.ExecuteNonQuery();
+                    Response.Write("<script> alert('Brand Added Successfully');   </script>");
+                    txtBrand.Text = string.Empty;
 
 
-                con.Close();
-                txtBrand.Focus();
+                    con.Close();
+                    txtBrand.Focus();
+                }
             }
         }
     }

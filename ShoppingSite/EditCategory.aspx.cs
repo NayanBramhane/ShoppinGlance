@@ -58,8 +58,8 @@ namespace ShoppingSite
             MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["MyShoppingDB"].ConnectionString);
             if (con.State == ConnectionState.Closed) { con.Open(); }
             MySqlCommand cmd = new MySqlCommand("update tblCategory set CatName=_Name where CatID=_ID", con);
-            cmd.Parameters.AddWithValue("_ID", Convert.ToInt32(txtID.Text));
-            cmd.Parameters.AddWithValue("_Name", txtUpdateCatName.Text);
+            cmd.Parameters.AddWithValue("_ID", Convert.ToInt32(txtID.Text.Trim()));
+            cmd.Parameters.AddWithValue("_Name", txtUpdateCatName.Text.Trim());
             cmd.ExecuteNonQuery();
             con.Close();
             Response.Write("<script>alert('Update successfully')</script>");

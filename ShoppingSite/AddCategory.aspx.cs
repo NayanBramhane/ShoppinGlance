@@ -12,6 +12,7 @@ namespace ShoppingSite
 {
     public partial class AddCategory : System.Web.UI.Page
     {
+        char[] charsToTrim = { ' ', '\t' };
         protected void Page_Load(object sender, EventArgs e)
         {
             BindCategoryRepeater();
@@ -41,7 +42,7 @@ namespace ShoppingSite
                 con.Open();
 
 
-                MySqlCommand cmd = new MySqlCommand("Insert into tblCategory (CatName) Values('" + txtCategory.Text + "')", con);
+                MySqlCommand cmd = new MySqlCommand("Insert into tblCategory (CatName) Values('" + txtCategory.Text.Trim(charsToTrim) + "')", con);
                 cmd.ExecuteNonQuery();
                 Response.Write("<script> alert('Category Added Successfully');   </script>");
                 txtCategory.Text = String.Empty;

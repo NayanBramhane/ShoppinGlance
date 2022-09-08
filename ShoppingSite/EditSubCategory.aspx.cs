@@ -57,7 +57,7 @@ namespace ShoppingSite
             MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["MyShoppingDB"].ConnectionString);
             if (con.State == ConnectionState.Closed) { con.Open(); }
             MySqlCommand cmd = new MySqlCommand("select SubCatID,SubCatName,MainCatID from tblSubCategory where SubCatID=_ID;", con);
-            cmd.Parameters.AddWithValue("_ID", Convert.ToInt32(txtID.Text));
+            cmd.Parameters.AddWithValue("_ID", Convert.ToInt32(txtID.Text.Trim()));
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             DataTable dt = new DataTable();
@@ -111,9 +111,9 @@ namespace ShoppingSite
                 MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["MyShoppingDB"].ConnectionString);
                 if (con.State == ConnectionState.Closed) { con.Open(); }
                 MySqlCommand cmd = new MySqlCommand("update tblSubCategory set SubCatName=_SCN , MainCatID=_MCI where SubCatID=_ID", con);
-                cmd.Parameters.AddWithValue("_ID", Convert.ToInt32(txtID.Text));
+                cmd.Parameters.AddWithValue("_ID", Convert.ToInt32(txtID.Text.Trim()));
                 cmd.Parameters.AddWithValue("_MCI", ddlMainCategory.SelectedValue);
-                cmd.Parameters.AddWithValue("_SCN", txtSubCategory.Text);
+                cmd.Parameters.AddWithValue("_SCN", txtSubCategory.Text.Trim());
                 cmd.ExecuteNonQuery();
                 con.Close();
                 Response.Write("<script>alert('Update successfully')</script>");

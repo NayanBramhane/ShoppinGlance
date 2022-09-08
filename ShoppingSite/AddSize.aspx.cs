@@ -12,6 +12,7 @@ namespace ShoppingSite
 {
     public partial class AddSize : System.Web.UI.Page
     {
+        char[] charsToTrim = { ' ', '\t' };
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -108,7 +109,7 @@ namespace ShoppingSite
             {
                 con.Open();
                 MySqlCommand cmd = new MySqlCommand("Insert into tblSizes (SizeName, BrandID, CategoryID, SubCategoryID, GenderID) " +
-                    "Values('" + txtSize.Text + "','" + ddlBrand.SelectedItem.Value + "','" + ddlCategory.SelectedItem.Value + "','" + 
+                    "Values('" + txtSize.Text.Trim(charsToTrim) + "','" + ddlBrand.SelectedItem.Value + "','" + ddlCategory.SelectedItem.Value + "','" + 
                     ddlSubCat.SelectedItem.Value + "','" + ddlGender.SelectedItem.Value + "')", con);
                 cmd.ExecuteNonQuery();
 

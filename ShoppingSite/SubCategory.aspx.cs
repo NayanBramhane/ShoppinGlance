@@ -64,7 +64,7 @@ namespace ShoppingSite
             using (MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["MyShoppingDB"].ConnectionString))
             {
                 con.Open();
-                MySqlCommand cmd = new MySqlCommand("Insert into tblSubCategory(SubCatName,MainCatID) Values('" + txtSubCategory.Text + "','" +
+                MySqlCommand cmd = new MySqlCommand("Insert into tblSubCategory(SubCatName,MainCatID) Values('" + txtSubCategory.Text.Trim() + "','" +
                     ddlMainCatID.SelectedItem.Value + "')", con);
                 cmd.ExecuteNonQuery();
 

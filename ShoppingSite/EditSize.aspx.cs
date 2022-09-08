@@ -119,12 +119,12 @@ namespace ShoppingSite
                 if (con.State == ConnectionState.Closed) { con.Open(); }
                 MySqlCommand cmd = new MySqlCommand("update tblSizes set SizeName=_SizeName,BrandID=_BrandID,CategoryID=_CategoryID," +
                     "SubCategoryID=_SubCategoryID,GenderID=_GenderID where SizeID=_SizeID", con);
-                cmd.Parameters.AddWithValue("_SizeID", Convert.ToInt32(txtID.Text));
+                cmd.Parameters.AddWithValue("_SizeID", Convert.ToInt32(txtID.Text.Trim()));
                 cmd.Parameters.AddWithValue("_CategoryID", ddlCategory.SelectedValue);
                 cmd.Parameters.AddWithValue("_SubCategoryID", ddlSubCategory.SelectedValue);
                 cmd.Parameters.AddWithValue("_BrandID", ddlBrand.SelectedValue);
                 cmd.Parameters.AddWithValue("_GenderID", ddlGender.SelectedValue);
-                cmd.Parameters.AddWithValue("_SizeName", txtSize.Text);
+                cmd.Parameters.AddWithValue("_SizeName", txtSize.Text.Trim());
                 cmd.ExecuteNonQuery();
                 con.Close();
                 Response.Write("<script>alert('Update successfully')</script>");

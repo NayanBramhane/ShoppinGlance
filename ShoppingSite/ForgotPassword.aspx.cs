@@ -27,7 +27,7 @@ namespace ShoppingSite
 
 
                 MySqlCommand cmd = new MySqlCommand("Select * from tblUsers where Email=@Email", con);
-                cmd.Parameters.AddWithValue("@Email", txtEmailID.Text);
+                cmd.Parameters.AddWithValue("@Email", txtEmailID.Text.Trim()) ;
                 MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);

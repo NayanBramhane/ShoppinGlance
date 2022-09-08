@@ -16,7 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" target="_blank" href="css/mystyle.css"/>
+    <link rel="stylesheet" type="text/css" target="_blank" href="css/mystyle.css" runat="server"/>
 
     <script type="text/javascript" src="js/btnCart.js"></script>
 
@@ -47,23 +47,23 @@
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="Default.aspx">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Blog</a></li>
+                            <li><a href="About.aspx">About</a></li>
+                            <li><a href="Contact.aspx">Contact</a></li>
+                            <%--<li><a href="#">Blog</a></li>--%>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li class="dropdown-header">Men</li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#">Shirts</a></li>
-                                    <li><a href="#">Pants</a></li>
-                                    <li><a href="#">Denims</a></li>
+                                    <li><a href="ManShirt.aspx">Shirts</a></li>
+                                    <li><a href="ManPants.aspx">Pants</a></li>
+                                    <li><a href="ManDenims.aspx">Denims</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li class="dropdown-header">Women</li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#">Top</a></li>
-                                    <li><a href="#">Leggings</a></li>
-                                    <li><a href="#">Denims</a></li>
+                                    <li><a href="WomanTop.aspx">Top</a></li>
+                                    <li><a href="WomanLegging.aspx">Leggings</a></li>
+                                    <li><a href="WomanSarees.aspx">Sarees</a></li>
 
                                 </ul>
                             </li>
@@ -98,7 +98,7 @@
       <p>I am developer at heart that loves to learn and play with new technologies. I am an aspiring Full Stack Web Developer currently studying in Third Year.</p>
       <%--<button  id="btn11" runat="server" onclick="btn11_onclick()">Get in Touch</button>--%>
         <asp:Button  class="btn btn-default btn-lg" ID="Button1" runat="server" 
-            Text="Get in Touch" onclick="Button1_Click" />
+            Text="Get in Touch" onclick="Button1_Click"/>
 
     </div>
     <div class="col-sm-4">

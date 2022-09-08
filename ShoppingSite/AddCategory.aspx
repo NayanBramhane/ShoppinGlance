@@ -48,7 +48,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Categories</th>
-                                <th>Edit</th>
+                                <%--<th>Edit</th>--%>
                             </tr>
                         </thead>
                         
@@ -61,7 +61,7 @@
                             <tr>
                                 <th> <%# Eval("CatID") %> </th>
                                 <td> <%# Eval("CatName") %> </td>
-                                <td>Edit</td>
+                                <%--<td>Edit</td>--%>
                             </tr>
 
                 </ItemTemplate>

@@ -4,8 +4,7 @@
 
 <html>
 <head runat="server">
-    <title>Welcome User</title>
-
+    <title />
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
     <meta charset="utf-8" >
@@ -40,8 +39,8 @@
                         </button>
                         <a class="navbar-brand" href="Default.aspx">
                             <span>
-                                <img src="icons/setting.png" alt="Shoppinglance" height="30" />
-                            </span>Shoppinglance
+                                <img src="icons/setting.png" alt="ShoppinGlance" height="30" />
+                            </span>ShoppinGlance
                         </a>
 
                     </div>
@@ -59,15 +58,15 @@
                                     <li role="separator" class="divider"></li>
                                     <li class="dropdown-header">Men</li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#">Shirts</a></li>
-                                    <li><a href="#">Pants</a></li>
-                                    <li><a href="#">Denims</a></li>
+                                    <li><a href="ManShirt.aspx">Shirts</a></li>
+                                    <li><a href="ManPants.aspx">Pants</a></li>
+                                    <li><a href="ManDenims.aspx">Denims</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li class="dropdown-header">Women</li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#">Top</a></li>
-                                    <li><a href="#">Leggings</a></li>
-                                    <li><a href="#">Denims</a></li>
+                                    <li><a href="WomanTop.aspx">Top</a></li>
+                                    <li><a href="WomanLegging.aspx">Leggings</a></li>
+                                    <li><a href="WomanSarees.aspx">Sarees</a></li>
 
                                 </ul>
                             </li>
@@ -82,6 +81,9 @@
                             <li>
                                 <asp:Button ID="btnLogin" CssClass="btn btn-default navbar-btn" runat="server" Text="Sign In" OnClick="btnLogin_Click"/>
                                 <asp:Button ID="btnlogout" CssClass="btn btn-default navbar-btn" runat="server" Text="Sign Out" OnClick="btnlogout_Click"/>
+                            </li>
+                            <li>
+                                <asp:Button ID="Button1" CssClass ="btn btn-link navbar-btn " runat="server" Text=""  />
                             </li>
                         </ul>
                     </div>

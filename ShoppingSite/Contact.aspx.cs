@@ -7,16 +7,15 @@ using System.Web.UI.WebControls;
 
 namespace ShoppingSite
 {
-    public partial class Success : System.Web.UI.Page
+    public partial class Contact : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
-
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btnlogout_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Products.aspx");
+
         }
     }
 }

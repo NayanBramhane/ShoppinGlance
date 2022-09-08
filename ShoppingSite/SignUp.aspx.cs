@@ -25,8 +25,8 @@ namespace ShoppingSite
                     con.Open();
 
 
-                    MySqlCommand cmd = new MySqlCommand("Insert into tblUsers(Username,Password,Email,Name,Usertype) Values('" + txtUname.Text + "','" +
-                        txtPass.Text + "','" + txtEmail.Text + "','" + txtName.Text + "','User')", con);
+                    MySqlCommand cmd = new MySqlCommand("Insert into tblUsers(Username,Password,Email,Name,Usertype) Values('" + txtUname.Text.Trim() + 
+                        "','" + txtPass.Text.Trim() + "','" + txtEmail.Text.Trim() + "','" + txtName.Text.Trim() + "','User')", con);
                     cmd.ExecuteNonQuery();
                     Response.Write("<script> alert('Registration Successfully Done');   </script>");
                     clr();

@@ -13,5 +13,9 @@ namespace ShoppingSite
         {
 
         }
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("SignIn.aspx");
+        }
     }
 }

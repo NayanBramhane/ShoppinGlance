@@ -48,7 +48,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Brand</th>
-                                <th>Edit</th>
+                                <%--<th>Edit</th>--%>
                             </tr>
                         </thead>
                         
@@ -61,7 +61,7 @@
                             <tr>
                                 <th> <%# Eval("BrandID") %> </th>
                                 <td> <%# Eval("Name") %> </td>
-                                <td>Edit</td>
+                                <%--<td>Edit</td>--%>
                             </tr>
 
                 </ItemTemplate>

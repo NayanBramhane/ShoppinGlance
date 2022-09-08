@@ -17,10 +17,18 @@ namespace ShoppingSite
         public static String CS = ConfigurationManager.ConnectionStrings["MyShoppingDB"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
+            divQtyError.Visible = false;
             if (!IsPostBack)
             {
-                BindProductCart();
-                BindCartNumber();
+                if (Session["Username"] != null)
+                {
+                    BindProductCart();
+                    BindCartNumber();
+                }
+                else
+                {
+                    Response.Redirect("Signin.aspx");
+                }
             }
         }
 

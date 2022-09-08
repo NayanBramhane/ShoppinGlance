@@ -121,7 +121,7 @@ namespace ShoppingSite
                 con.Open();
                 string qr = "select A.*,B.*,C.Name ,A.PPrice-A.PSellPrice as DiscAmount,B.Name as ImageName, C.Name as BrandName from tblProducts A " +
                     "inner join tblBrands C on C.BrandID =A.PBrandID  join lateral( select * from tblProductImages B where B.PID= A.PID " +
-                    "order by B.PID desc limit 1)B where  A.PName like '%" + txtFilterGrid1Record.Text + "%' order by A.PID desc";
+                    "order by B.PID desc limit 1)B where  A.PName like '%" + txtFilterGrid1Record.Text.Trim() + "%' order by A.PID desc";
                 MySqlDataAdapter da = new MySqlDataAdapter(qr, con);
                 string text = ((TextBox)sender).Text;
                 DataSet ds = new DataSet();

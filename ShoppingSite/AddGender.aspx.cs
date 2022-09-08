@@ -12,6 +12,7 @@ namespace ShoppingSite
 {
     public partial class AddGender : System.Web.UI.Page
     {
+        char[] charsToTrim = { ' ', '\t' };
         protected void Page_Load(object sender, EventArgs e)
         {
             BindGenderRepeater();
@@ -38,7 +39,7 @@ namespace ShoppingSite
             using (MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["MyShoppingDB"].ConnectionString))
             {
                 con.Open();
-                MySqlCommand cmd = new MySqlCommand("Insert into tblGender(GenderName) Values('" + txtGender.Text +"')", con);
+                MySqlCommand cmd = new MySqlCommand("Insert into tblGender(GenderName) Values('" + txtGender.Text.Trim(charsToTrim) + "')", con);
                 cmd.ExecuteNonQuery();
 
                 Response.Write("<script> alert('Gender Added Successfully ');  </script>");
