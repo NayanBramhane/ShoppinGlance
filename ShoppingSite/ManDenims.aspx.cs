@@ -28,7 +28,6 @@ namespace ShoppingSite
                     }
                     BindProductRepeater();
                     BindCartNumber();
-
                 }
             }
             else

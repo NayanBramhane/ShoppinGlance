@@ -215,29 +215,20 @@
     <Content Include="css\bootstrap.rtl.min.css" />
     <Content Include="css\mystyle.css" />
     <Content Include="Default.aspx" />
+    <Content Include="DynamicProducts.aspx" />
     <Content Include="EditBrand.aspx" />
     <Content Include="EditCategory.aspx" />
     <Content Include="EditSize.aspx" />
     <Content Include="EditSubCategory.aspx" />
     <Content Include="ForgotPassword.aspx" />
     <Content Include="icons\setting.png" />
+    <Content Include="icons\ShoppinGlance.png" />
     <Content Include="ImageSlider\Girl 2.jpg" />
     <Content Include="ImageSlider\Girl.jpg" />
     <Content Include="ImageSlider\Shoes.jpg" />
     <Content Include="ImageSlider\Suit 2.jpg" />
     <Content Include="ImageSlider\Suit.jpg" />
     <Content Include="Images\NoImg.jpeg" />
-    <Content Include="Images\ProductImages\1\Gucci Printed viscose polo Casual Shirt01.jpg" />
-    <Content Include="Images\ProductImages\1\Gucci Printed viscose polo Casual Shirt02.jpg" />
-    <Content Include="Images\ProductImages\1\Gucci Printed viscose polo Casual Shirt03.jpg" />
-    <Content Include="Images\ProductImages\1\Gucci Printed viscose polo Casual Shirt04.jpg" />
-    <Content Include="Images\ProductImages\1\Gucci Printed viscose polo Casual Shirt05.jpg" />
-    <Content Include="Images\ProductImages\2\BATA TAN SANDAL FOR MEN01.jpg" />
-    <Content Include="Images\ProductImages\2\BATA TAN SANDAL FOR MEN02.jpg" />
-    <Content Include="Images\ProductImages\2\BATA TAN SANDAL FOR MEN03.jpg" />
-    <Content Include="Images\ProductImages\2\BATA TAN SANDAL FOR MEN04.jpg" />
-    <Content Include="Images\ProductImages\2\BATA TAN SANDAL FOR MEN05.jpg" />
-    <Content Include="Images\ProductImages\3\LEVI%27S WOMEN%27S STYLED SHIRT01.jpg" />
     <Content Include="js\bootstrap.bundle.js" />
     <Content Include="js\bootstrap.bundle.min.js" />
     <Content Include="js\bootstrap.esm.js" />
@@ -340,6 +331,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicProducts.aspx.cs">
+      <DependentUpon>DynamicProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicProducts.aspx.designer.cs">
+      <DependentUpon>DynamicProducts.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditBrand.aspx.cs">
       <DependentUpon>EditBrand.aspx</DependentUpon>
@@ -530,7 +528,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Images\ProductImages\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="ShoppingSite.About" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="ShoppingSite.About1" %>
 
 <!DOCTYPE html>
 
@@ -23,7 +23,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        
         <br />
 
         <div>
@@ -192,7 +191,6 @@
 </footer>
 
         <!--Footer Content End-->
-
     </form>
 </body>
 </html>

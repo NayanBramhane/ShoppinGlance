@@ -11,25 +11,25 @@ namespace ShoppingSite
 {
 
 
-    public partial class About1
+    public partial class DynamicProducts
     {
 
         /// <summary>
-        /// form1 control.
+        /// txtFilterGrid1Record control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.TextBox txtFilterGrid1Record;
 
         /// <summary>
-        /// Button1 control.
+        /// rptrProducts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Repeater rptrProducts;
     }
 }

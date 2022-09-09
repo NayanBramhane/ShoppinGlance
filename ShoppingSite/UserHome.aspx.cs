@@ -15,14 +15,16 @@ namespace ShoppingSite
         public static String CS = ConfigurationManager.ConnectionStrings["MyShoppingDB"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-            BindCartNumber();
-            if (Session["Username"] != null)
+            if (!IsPostBack)
             {
-                btnlogout.Visible = true;
-                btnLogin.Visible = false;
-                lblSuccess.Text = "Login Success, Welcome <b>" + Session["Username"].ToString() + "</b>";
-                Button1.Text = "Welcome: " + Session["Username"].ToString().ToUpper();
-                BindCartNumber();
+                if (Session["Username"] != null)
+                {
+                    btnlogout.Visible = true;
+                    btnLogin.Visible = false;
+                    lblSuccess.Text = "Login Success, Welcome <b>" + Session["Username"].ToString() + "</b>";
+                    Button1.Text = "Welcome: " + Session["Username"].ToString().ToUpper();
+                    BindCartNumber();
+                }
             }
             else
             {

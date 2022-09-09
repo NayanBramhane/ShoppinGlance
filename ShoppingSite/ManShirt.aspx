@@ -4,12 +4,12 @@
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.0/css/jquery.dataTables.css" />  
         <script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>  
         <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
-    <link href="css/mystyle.css" rel="stylesheet" />
+    <link href="css/mystyle.css" runat="server" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 <div class="container">
-  <h2>Mas's Shirt</h2>  
+  <h2>Mans's Shirt</h2>  
 
     <div class="panel panel-primary">
       <div class="panel-heading">Shirts</div>
@@ -25,7 +25,7 @@
         <div class="col-sm-3 col-md-3">
             <a href="ProductView.aspx?PID=<%# Eval("PID") %>" style="text-decoration:none;">
           <div class="thumbnail">              
-              <img src="Images/ProductImages/<%# Eval("PID") %>/<%# Eval("ImageName") %><%# Eval("Extention") %>" alt="<%# Eval("ImageName") %>"/>
+              <img src="Images/ProductImages/<%# Eval("PID") %>/<%# Eval("ImageName") %><%# Eval("Extension") %>" alt="<%# Eval("ImageName") %>"/>
               <div class="caption"> 
                    <div class="pro-brand"><%# Eval ("BrandName") %>  </div>
                    <div class="pro-name"> <%# Eval ("PName") %> </div>

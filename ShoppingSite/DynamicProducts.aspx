@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User.Master" AutoEventWireup="true" CodeBehind="WomanTop.aspx.cs" Inherits="ShoppingSite.WomanTop" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User.Master" AutoEventWireup="true" CodeBehind="DynamicProducts.aspx.cs" Inherits="ShoppingSite.DynamicProducts" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <title>Woman Top</title>
+    <title></title>
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.0/css/jquery.dataTables.css" />  
         <script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>  
         <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
@@ -8,14 +8,14 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<div class="container">
-  <h2>Woman's Top</h2>  
+    <div class="container">
+  <h2>Mans's Jeans Denim Pants</h2>  
 
     <div class="panel panel-primary">
-      <div class="panel-heading">Shirts</div>
+      <div class="panel-heading">Jeans Denim Pants</div>
       <div class="panel-body">
 
-          <asp:TextBox ID="txtFilterGrid1Record" CssClass="form-control" runat="server" 
+      <asp:TextBox ID="txtFilterGrid1Record" CssClass="form-control" runat="server" 
               placeholder="Search Products...." AutoPostBack="true" 
               ontextchanged="txtFilterGrid1Record_TextChanged" ></asp:TextBox>
       <br />
@@ -40,8 +40,7 @@
        </asp:repeater>
       
       </div>
-      <div class="panel-footer">
-      </div>
+      <div class="panel-footer">  </div>
     </div>
     
 </div>
