@@ -215,7 +215,6 @@
     <Content Include="css\bootstrap.rtl.min.css" />
     <Content Include="css\mystyle.css" />
     <Content Include="Default.aspx" />
-    <Content Include="DynamicProducts.aspx" />
     <Content Include="EditBrand.aspx" />
     <Content Include="EditCategory.aspx" />
     <Content Include="EditSize.aspx" />
@@ -331,13 +330,6 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DynamicProducts.aspx.cs">
-      <DependentUpon>DynamicProducts.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicProducts.aspx.designer.cs">
-      <DependentUpon>DynamicProducts.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditBrand.aspx.cs">
       <DependentUpon>EditBrand.aspx</DependentUpon>

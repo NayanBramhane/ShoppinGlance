@@ -43,7 +43,7 @@ namespace ShoppingSite
                 btnlogout.Visible = false;
                 btnCart.Visible = false;
                 //Response.Redirect("~/Default.aspx");
-                Response.Write("<script type='text/javascript'>alert('Login plz')</script>");
+                //Response.Write("<script type='text/javascript'>alert('Login plz')</script>");
             }
         }
 

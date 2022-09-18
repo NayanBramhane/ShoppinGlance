@@ -25,7 +25,7 @@
                         
                         <asp:DropDownList ID="ddlBrand" CssClass ="form-control" runat="server"></asp:DropDownList>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorBrand" runat="server" CssClass ="text-danger" 
-                            ErrorMessage=" Enter Brand" ControlToValidate="ddlBrand" ForeColor="Red"></asp:RequiredFieldValidator>
+                            ErrorMessage=" Select Brand" ControlToValidate="ddlBrand" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                 </div>
 
@@ -36,7 +36,7 @@
                         <asp:DropDownList ID="ddlCategory" CssClass ="form-control" runat="server" 
                             OnSelectedIndexChanged="ddlCategory_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorCategory" runat="server" CssClass ="text-danger" 
-                            ErrorMessage=" Enter Category" ControlToValidate="ddlCategory" ForeColor="Red"></asp:RequiredFieldValidator>
+                            ErrorMessage=" Select Category" ControlToValidate="ddlCategory" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div> 
                 </div>
 
@@ -46,7 +46,7 @@
 
                         <asp:DropDownList ID="ddlSubCat" CssClass ="form-control" runat="server"></asp:DropDownList>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorSubCategory" runat="server" CssClass ="text-danger" 
-                            ErrorMessage=" Enter SubCategory" ControlToValidate="ddlSubCat" ForeColor="Red"></asp:RequiredFieldValidator>
+                            ErrorMessage=" Select SubCategory" ControlToValidate="ddlSubCat" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                 </div>
 
@@ -56,7 +56,7 @@
 
                         <asp:DropDownList ID="ddlGender" CssClass ="form-control" runat="server"></asp:DropDownList>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorGender" runat="server" CssClass ="text-danger" 
-                            ErrorMessage=" Enter Gender" ControlToValidate="ddlGender" ForeColor="Red"></asp:RequiredFieldValidator>
+                            ErrorMessage=" Select Gender" ControlToValidate="ddlGender" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                 </div>
                 

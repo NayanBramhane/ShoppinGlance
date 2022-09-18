@@ -28,6 +28,36 @@ namespace ShoppingSite
                 ddlGender.Enabled = false;
 
                 BindGridView();
+
+                /*Clear all fields*/
+                txtProductName.Text = string.Empty;
+                txtPrice.Text = string.Empty;
+                txtSellPrice.Text = string.Empty;
+                ddlBrand.ClearSelection();
+                ddlBrand.Items.FindByValue("0").Selected = true;
+                ddlCategory.ClearSelection();
+                ddlCategory.Items.FindByValue("0").Selected = true;
+                ddlSubCat.ClearSelection();
+                ddlSubCat.Items.FindByValue("0").Selected = true;
+                ddlGender.ClearSelection();
+                ddlGender.Items.FindByValue("0").Selected = true;
+                cblSize.ClearSelection();
+                txtQuantity.Text = string.Empty;
+                txtDescription.Text = string.Empty;
+                txtPDetail.Text = string.Empty;
+                fuImg01.Dispose();
+                fuImg01.Attributes.Clear();
+                fuImg02.Dispose();
+                fuImg02.Attributes.Clear();
+                fuImg03.Dispose();
+                fuImg03.Attributes.Clear();
+                fuImg04.Dispose();
+                fuImg04.Attributes.Clear();
+                fuImg05.Dispose();
+                fuImg05.Attributes.Clear();
+                chFD.Checked = false;
+                ch30Ret.Checked = false;
+                cbCOD.Checked = false;
             }
         }
 
@@ -283,6 +313,35 @@ namespace ShoppingSite
                         txtProductName.Text.ToString().Trim(charsToTrim) + "05" + "','" + Extension + "')", con);
                     cmd7.ExecuteNonQuery();
                 }
+                Response.Write("<script type='text/javascript'>alert('Product added Successfully')</script>");
+                txtProductName.Text = string.Empty;
+                txtPrice.Text = string.Empty;
+                txtSellPrice.Text = string.Empty;
+                ddlBrand.ClearSelection();
+                ddlBrand.Items.FindByValue("0").Selected = true;
+                ddlCategory.ClearSelection();
+                ddlCategory.Items.FindByValue("0").Selected = true;
+                ddlSubCat.ClearSelection();
+                ddlSubCat.Items.FindByValue("0").Selected = true;
+                ddlGender.ClearSelection();
+                ddlGender.Items.FindByValue("0").Selected = true;
+                cblSize.ClearSelection();
+                txtQuantity.Text = string.Empty;
+                txtDescription.Text=string.Empty;
+                txtPDetail.Text=string.Empty;
+                fuImg01.Dispose();
+                fuImg01.Attributes.Clear();
+                fuImg02.Dispose();
+                fuImg02.Attributes.Clear();
+                fuImg03.Dispose();
+                fuImg03.Attributes.Clear();
+                fuImg04.Dispose();
+                fuImg04.Attributes.Clear();
+                fuImg05.Dispose();
+                fuImg05.Attributes.Clear();
+                chFD.Checked = false;
+                ch30Ret.Checked = false;
+                cbCOD.Checked = false;
             }
         }
 

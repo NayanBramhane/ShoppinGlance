@@ -68,10 +68,10 @@
 
                                 </button>
 
-                            </li>--%>
+                            </li>
                             <li id="btnSignUp" runat="server"><a href="SignUp.aspx">SignUp</a></li>
                             <li id="btnSignIn" runat="server"><a href="SignIn.aspx">SignIn</a></li>
-                            <%--<li>
+                            <li>
                                 <asp:Button ID="btnlogout" CssClass="btn btn-default navbar-btn" runat="server" Text="Sign Out" OnClick="btnlogout_Click"/>
                             </li>--%>
                         </ul>

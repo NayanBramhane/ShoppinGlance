@@ -66,8 +66,8 @@
 
                                 </ul>
                             </li>
-                            <li><a href="SignUp.aspx">SignUp</a></li>
-                            <li class="active"><a href="SignIn.aspx">SignIn</a></li>
+                            <%--<li><a href="SignUp.aspx">SignUp</a></li>
+                            <li class="active"><a href="SignIn.aspx">SignIn</a></li>--%>
                         </ul>
                     </div>
 
@@ -183,6 +183,7 @@
                     <a href="About.aspx">About</a> &middot;
                     <a href="Contact.aspx">Contact</a> &middot;
                     <a href="Products.aspx">Products</a>
+                </p>
             </div>
     
 

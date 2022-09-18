@@ -26,7 +26,8 @@
                     <asp:TextBox ID="txtPrice" CssClass="form-control" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidatortxtPrice" runat="server" CssClass ="text-danger" 
                             ErrorMessage="Enter Price" ControlToValidate="txtPrice" ForeColor="Red"></asp:RequiredFieldValidator>
-
+                    <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Enter Correct Price" CssClass ="text-danger"
+                        ControlToValidate="txtPrice" ForeColor="Red" Operator="DataTypeCheck" Type="Double"></asp:CompareValidator>
                 </div>
             </div>
 
@@ -37,6 +38,11 @@
                     <asp:TextBox ID="txtSellPrice" CssClass="form-control" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidatortxtSellPrice" runat="server" CssClass ="text-danger" 
                             ErrorMessage="Enter Selling Price" ControlToValidate="txtSellPrice" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:CompareValidator ID="CompareValidator2" runat="server" ErrorMessage="Enter Correct Price" CssClass ="text-danger"
+                        ControlToValidate="txtSellPrice" ForeColor="Red" Operator="DataTypeCheck" Type="Double"></asp:CompareValidator>
+                    <asp:CompareValidator ID="CompareValidator4" runat="server" ErrorMessage="Selling Price should be less than Original Price" 
+                        ControlToCompare="txtPrice" ControlToValidate="txtSellPrice" ForeColor="Red" Operator="GreaterThan" CssClass ="text-danger">
+                    </asp:CompareValidator>
 
                 </div>
             </div>
@@ -106,6 +112,8 @@
                     <asp:TextBox ID="txtQuantity" CssClass="form-control" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidatortxtQuantity" runat="server" CssClass ="text-danger" 
                             ErrorMessage="Enter Quantity" ControlToValidate="txtQuantity" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:CompareValidator ID="CompareValidator3" runat="server" ErrorMessage="Enter whole numbers only" CssClass ="text-danger"
+                        ControlToValidate="txtQuantity" ForeColor="Red" Operator="DataTypeCheck" Type="Integer"></asp:CompareValidator>
 
                 </div>
             </div>
@@ -141,7 +149,8 @@
 
                     <asp:FileUpload ID="fuImg01" CssClass="form-control" runat="server" />
                     <asp:RequiredFieldValidator ID="RequiredFieldValidatorfuImg01" runat="server" CssClass ="text-danger" 
-                            ErrorMessage="Upload at least one Image" ControlToValidate="fuImg01" ForeColor="Red"></asp:RequiredFieldValidator>
+                            ErrorMessage="Upload one image in First File Upload field" ControlToValidate="fuImg01" ForeColor="Red">
+                    </asp:RequiredFieldValidator>
 
                 </div>
             </div>
