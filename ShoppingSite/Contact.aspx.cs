@@ -13,16 +13,12 @@ namespace ShoppingSite
         protected void Page_Load(object sender, EventArgs e)
         {
             
-        }
-        protected void btnlogout_Click(object sender, EventArgs e)
+        }        
+
+        protected void Button1_Click(object sender, EventArgs e)
         {
-            foreach (var item in Page.Controls)
-            {
-                if (item is TextBox)
-                {
-                    ((TextBox)item).Text = "";
-                }
-            }
+            TextBox1.Text = string.Empty;
+            TextBox2.Text = string.Empty;
             TextArea1.InnerText = string.Empty;
         }
     }

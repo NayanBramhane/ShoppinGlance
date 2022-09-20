@@ -87,31 +87,28 @@
             <div class="row row-contact">
                 <asp:Label ID="Label1" CssClass="required contact" runat="server" Text="Your name:"></asp:Label><br />
                 <asp:TextBox ID="TextBox1" CssClass="text-area" runat="server"></asp:TextBox><br />
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Enter your name" ControlToValidate="TextBox1">
-
-                </asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="text-danger" runat="server" ErrorMessage="Enter your name" 
+                    ControlToValidate="TextBox1" ForeColor="Red"></asp:RequiredFieldValidator>
 
             </div>
         
             <div class="row row-contact">
                 <asp:Label ID="Label2" CssClass="required contact" runat="server" Text="Your e-mail:"></asp:Label><br />
                 <asp:TextBox ID="TextBox2" CssClass="text-area" runat="server"></asp:TextBox><br />
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Enter your e-mail" ControlToValidate="TextBox2">
-
-                </asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" CssClass="text-danger" runat="server" ErrorMessage="Enter your e-mail" 
+                    ControlToValidate="TextBox2" ForeColor="Red"></asp:RequiredFieldValidator>
 
             </div>
         
             <div class="row row-contact">
                 <asp:Label ID="Label3" CssClass="required contact" runat="server" Text="Your message:"></asp:Label><br />
                 <textarea id="TextArea1" class="text-area" runat="server" cols="20" rows="2"></textarea>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Enter your message" ControlToValidate="TextArea1">
-
-                </asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" CssClass="text-danger" runat="server" ErrorMessage="Enter your message" 
+                    ControlToValidate="TextArea1" ForeColor="Red"></asp:RequiredFieldValidator>
 
             </div>
 
-            <asp:Button ID="Button1" CssClass="contact-button" runat="server" Text="Send email" />
+            <asp:Button ID="Button1" CssClass="contact-button" runat="server" Text="Send email" OnClick="Button1_Click" />
             <asp:Label ID="Label4" runat="server" Text=""></asp:Label>
         </div>
         <!-- Contact page start-->
