@@ -21,7 +21,7 @@
     <link rel="stylesheet" type="text/css" target="_blank" href="css/mystyle.css">
 
 </head>
-<body>
+<body style="background-color:burlywood">
     <form id="form1" runat="server">
 
          <div>
@@ -36,7 +36,7 @@
                         </button>
                         <a class="navbar-brand" href="Default.aspx">
                             <span>
-                                <img src="icons/setting.png" alt="ShoppinGlance" height="30" />
+                                <img src="icons/ShoppinGlance.png" alt="ShoppinGlance" height="30" />
                             </span>ShoppinGlance
                         </a>
 
@@ -92,11 +92,35 @@
         <br /><br /><br />
         
         <asp:Label ID="lblSuccess" CssClass="text-success" runat="server"></asp:Label>
+
+        <!-- Middle Content Starts -->
+
+        <div class="container center">
+            <div class="row">
+
+                <div class="col-lg-4">
+                    <img src="ProductImages/iphone-14-pro-storage-select-202209-6-7inch-deeppurple.jpg" alt="iphone" height="400" width="450"/>
+                    <p><a class="btn btn-default" href="Products.aspx" role="button">View More &raquo;</a></p>
+                </div>
+
+                <div class="col-lg-4">
+                    <img src="ProductImages/JL03373-YGP9EB_1_lar.jpg" alt="Necklace" height="400" width="400"/>
+                    <p><a class="btn btn-default" href="Products.aspx" role="button">View More &raquo;</a></p>
+                </div>
+                <div class="col-lg-4">
+                    <img src="ProductImages/Rolex-watch.png" alt="Rolex Watch" height="400" width="400"/>
+                    <p><a class="btn btn-default" href="Products.aspx" role="button">View More &raquo;</a></p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Middle Content Ends -->
         
         <!--Footer Content Start-->
 
-        <hr />
-        <footer>
+        <hr  style="clear: both; visibility: hidden;"/>
+        <footer class="footer-pos">
             <div class="container">
                 <p class="pull-right">
                     <a href="#">Back to Top</a>

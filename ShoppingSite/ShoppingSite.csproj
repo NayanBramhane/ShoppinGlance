@@ -192,6 +192,7 @@
     <Content Include="AddProduct.aspx" />
     <Content Include="AddSize.aspx" />
     <Content Include="AdminHome.aspx" />
+    <Content Include="BackgroundImage\polygon-img.png" />
     <Content Include="Cart.aspx" />
     <Content Include="CircularImages\Dress-circle.jpeg" />
     <Content Include="CircularImages\Mobiles-circle.png" />
@@ -239,6 +240,9 @@
     <Content Include="ManPants.aspx" />
     <Content Include="ManShirt.aspx" />
     <Content Include="Payment.aspx" />
+    <Content Include="ProductImages\iphone-14-pro-storage-select-202209-6-7inch-deeppurple.jpg" />
+    <Content Include="ProductImages\JL03373-YGP9EB_1_lar.jpg" />
+    <Content Include="ProductImages\Rolex-watch.png" />
     <Content Include="Products.aspx" />
     <Content Include="ProductView.aspx" />
     <Content Include="RecoverPassword.aspx" />

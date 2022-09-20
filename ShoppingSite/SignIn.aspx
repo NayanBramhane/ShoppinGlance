@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" target="_blank" href="css/mystyle.css">
 
 </head>
-<body>
+<body style="background-color:burlywood">
     <form id="form1" runat="server">
 
         
@@ -34,8 +34,8 @@
                         </button>
                         <a class="navbar-brand" href="Default.aspx">
                             <span>
-                                <img src="icons/setting.png" alt="Shoppinglance" height="30" />
-                            </span>Shoppinglance
+                                <img src="icons/ShoppinGlance.png" alt="Shoppinglance" height="30" />
+                            </span>ShoppinGlance
                         </a>
 
                     </div>
@@ -79,7 +79,7 @@
             <div class="form-horizontal">
                 <br /><br /><br />
                 <h2>Login Form</h2>
-                <hr />
+                <hr  style="clear: both; visibility: hidden;"/>
                 <div class="form-group">
                     <asp:Label ID="Label1" CssClass="col-md-2 control-label" runat="server" Text="UserName"></asp:Label>
                     <div class="col-md-3">
@@ -140,8 +140,8 @@
 
         <!--Footer Content Start-->
 
-        <hr />
-        <footer>
+        <hr  style="clear: both; visibility: hidden;"/>
+        <footer class="footer-pos">
             <div class="container">
                 <p class="pull-right">
                     <a href="#">Back to Top</a>

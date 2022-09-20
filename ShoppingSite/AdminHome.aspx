@@ -5,6 +5,11 @@
     <br />
     <br />
 
-    <h2>Welcome Admin !...</h2>
+    <h1 style="font-size:100px">Welcome Admin !...</h1>
+
+    <h1>To show Report :</h1>
+    <h2>Click on Manage and then Reports</h2>
+
+
 
 </asp:Content>

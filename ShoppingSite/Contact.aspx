@@ -17,7 +17,8 @@
     <link rel="stylesheet" type="text/css" target="_blank" href="css/mystyle.css">
 
 </head>
-<body>
+<body style="background-image: url('BackgroundImage/polygon-img.png'); background-repeat: no-repeat; background-attachment: fixed; 
+background-size: cover;">
     <form id="form1" runat="server">
         <br /><br /><br />
         <div>
@@ -33,7 +34,7 @@
 
                         <a class="navbar-brand" href="Default.aspx">
                             <span>
-                                <img src="icons/setting.png" alt="ShoppinGlance" height="30" />
+                                <img src="icons/ShoppinGlance.png" alt="ShoppinGlance" height="30" />
                             </span>ShoppinGlance
                         </a>
 
@@ -83,7 +84,7 @@
         </div>
 
         <!-- Contact page start-->
-        <div class="center-page contact">
+        <div class="center-page contact_form">
             <div class="row row-contact">
                 <asp:Label ID="Label1" CssClass="required contact" runat="server" Text="Your name:"></asp:Label><br />
                 <asp:TextBox ID="TextBox1" CssClass="text-area" runat="server"></asp:TextBox><br />
@@ -114,13 +115,13 @@
         <!-- Contact page start-->
 
         <!--Footer Content Start-->
-        <hr />
+        <hr style="clear: both; visibility: hidden;"/>
         <footer class="footer-pos">
             <div class="container">
                 <p class="pull-right">
                     <a href="#">Back to Top</a>
                 </p>
-                <p>&copy;2022 Nayan Bramhane &middot;
+                <p">&copy;2022 Nayan Bramhane &middot;
                     <a href="Default.aspx">Home</a> &middot;
                     <a href="About.aspx">About</a> &middot;
                     <a href="Contact.aspx">Contact</a> &middot;

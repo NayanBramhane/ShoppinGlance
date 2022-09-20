@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" target="_blank" href="css/mystyle.css">
 
 </head>
-<body>
+<body style="background-color:burlywood">
     <form id="form1" runat="server">
         <div>
 
@@ -31,7 +31,7 @@
                         </button>
                         <a class="navbar-brand" href="Default.aspx">
                             <span>
-                                <img src="icons/setting.png" alt="ShoppinGlance" height="30" />
+                                <img src="icons/ShoppinGlance.png" alt="ShoppinGlance" height="30" />
                             </span>ShoppinGlance
                         </a>
 
@@ -75,7 +75,7 @@
                 <br />
                 
                 <h2>Reset Password</h2>
-                <hr />
+                <hr  style="clear: both; visibility: hidden;"/>
                 <h3></h3>
                 <div class="form-group">
                     <asp:Label ID="lblMsg" CssClass="col-md-2 control-label" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="Red">
@@ -121,8 +121,8 @@
 
     <!--Footer Content Start-->
 
-        <hr />
-        <footer>
+        <hr  style="clear: both; visibility: hidden;"/>
+        <footer class="footer-pos">
             <div class="container">
                 <p class="pull-right">
                     <a href="#">Back to Top</a>

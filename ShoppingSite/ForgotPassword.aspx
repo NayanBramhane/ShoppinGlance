@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" target="_blank" href="css/mystyle.css">
 
 </head>
-<body>
+<body style="background-color:burlywood">
     <form id="form1" runat="server">
         <div>
 
@@ -31,8 +31,8 @@
                         </button>
                         <a class="navbar-brand" href="Default.aspx">
                             <span>
-                                <img src="icons/setting.png" alt="Shoppinglance" height="30" />
-                            </span>Shoppinglance
+                                <img src="icons/ShoppinGlance.png" alt="Shoppinglance" height="30" />
+                            </span>ShoppinGlance
                         </a>
 
                     </div>
@@ -75,7 +75,7 @@
                 <br />
                 
                 <h2>Recover Password</h2>
-                <hr />
+                <hr  style="clear: both; visibility: hidden;"/>
                 <h3>Please enter your e-mail address, we will send you the recovery link for your password!</h3>
 
                 <div class="form-group">
@@ -100,7 +100,7 @@
     <!--Footer Content Start-->
 
         <hr />
-        <footer>
+        <footer class="footer-pos">
             <div class="container">
                 <p class ="pull-right "><a href ="#">&nbsp; &nbsp; Back to top &nbsp; &nbsp;</a></p>
                 <p class ="pull-right "><a href="AdminHome.aspx"> Admin Login  </a></p> 

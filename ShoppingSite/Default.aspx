@@ -37,7 +37,7 @@
                         </button>
                         <a class="navbar-brand" href="Default.aspx">
                             <span>
-                                <img src="icons/setting.png" alt="Shoppinglance" height="30" />
+                                <img src="icons/ShoppinGlance.png" alt="Shoppinglance" height="30" />
                             </span>Shoppinglance
                         </a>
 
@@ -182,7 +182,7 @@
 
         <!--Middle Content-->
 
-        <hr />
+        <hr  style="clear: both; visibility: hidden;"/>
         <div class="container center">
             <div class="row">
                 <div class="col-lg-4">
@@ -270,7 +270,7 @@
 
         <!--Footer Content Start-->
         <hr />
-        <footer>
+        <footer  class="footer-pos">
             <div class="container">
                 <p class="pull-right">
                     <a href="#">Back to Top</a>

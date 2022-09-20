@@ -29,15 +29,17 @@ div.item img{
     left:0;
     margin:auto;
 }
-.footer-pos{
-    width:auto;
-    height:auto;
-    position:absolute;
-    top:600px;
-    bottom:0;
-    left:0;
-    right:0;
-    margin:auto;
+.footer-pos {
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 600px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: black;
+    font-weight: bold;
 }
 
 <!-- View all Products -->
@@ -229,7 +231,11 @@ a:hover{
 label.contact {
     color: #FFFFFF;
     font-size: 18px;
-    margin-left: 10px;
+    margin-left: 30px;
+}
+.contact {
+    color: black;
+    font-weight: bold;
 }
 
 .text-area textbox.text-area {
@@ -269,4 +275,27 @@ label.contact {
         text-align: center;
         margin: 25px 0;
     }
+}
+
+/* UserHome.aspx */
+
+.u-products {
+    width: 500px;
+    height: 500px;
+    background-color: blanchedalmond;
+}
+.u-products1{
+    background-image: url('../productimages/iphone-14-pro-storage-select-202209-6-7inch-deeppurple.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.u-products2 {
+    background-image: url('../productimages/jl03373-ygp9eb_1_lar.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.u-products3 {
+    background-image: url('../productimages/rolex-watch.png');
+    background-repeat: no-repeat;
+    background-size: contain;
 }
