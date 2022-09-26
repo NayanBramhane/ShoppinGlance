@@ -279,23 +279,24 @@ label.contact {
 
 /* UserHome.aspx */
 
-.u-products {
-    width: 500px;
-    height: 500px;
-    background-color: blanchedalmond;
+
+.UH {
+    border: 2px solid rebeccapurple;
+    /*border-radius: 15px;*/
+    margin-left:5px;
+    margin-right:50px;
+    height:300px;
+    width:300px;
+    padding:0px;
+    margin-bottom:50px;
 }
-.u-products1{
-    background-image: url('../productimages/iphone-14-pro-storage-select-202209-6-7inch-deeppurple.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+.UH img{
+    max-height:100%;
+    max-width:100%;
+    object-fit: cover;
+    overflow: hidden;
+    margin-bottom:3px;
 }
-.u-products2 {
-    background-image: url('../productimages/jl03373-ygp9eb_1_lar.jpg');
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-.u-products3 {
-    background-image: url('../productimages/rolex-watch.png');
-    background-repeat: no-repeat;
-    background-size: contain;
+#third-image{
+    background-color:white;
 }

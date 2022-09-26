@@ -270,7 +270,7 @@
 
         <!--Footer Content Start-->
         <hr />
-        <footer  class="footer-pos">
+        <footer>
             <div class="container">
                 <p class="pull-right">
                     <a href="#">Back to Top</a>

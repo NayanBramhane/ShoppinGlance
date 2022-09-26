@@ -114,15 +114,6 @@ namespace ShoppingSite
         protected global::System.Web.UI.WebControls.CompareValidator CompareValidator2;
 
         /// <summary>
-        /// CompareValidator4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator4;
-
-        /// <summary>
         /// Label4 control.
         /// </summary>
         /// <remarks>
@@ -249,13 +240,13 @@ namespace ShoppingSite
         protected global::System.Web.UI.WebControls.CheckBoxList cblSize;
 
         /// <summary>
-        /// RequiredFieldValidatorcblSize control.
+        /// CustomValidatorcblSize control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorcblSize;
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidatorcblSize;
 
         /// <summary>
         /// Label20 control.

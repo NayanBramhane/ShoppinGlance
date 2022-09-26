@@ -26,6 +26,7 @@ namespace ShoppingSite
                     BindProductImage();
                     BindProductDetails();
                     BindCartNumber();
+                    divSuccess.Visible = false;
                 }
             }
             else
@@ -285,7 +286,11 @@ namespace ShoppingSite
                 Response.Redirect("Signin.aspx?rurl=" + PID);
             }
         }
-        protected void btnCart2_ServerClick(object sender, EventArgs e)
+        //protected void btnCart2_ServerClick(object sender, EventArgs e)
+        //{
+        //    Response.Redirect("Cart.aspx");
+        //}
+        protected void LinkButton1_Click(object sender, EventArgs e)
         {
             Response.Redirect("Cart.aspx");
         }

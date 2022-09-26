@@ -11,7 +11,10 @@ namespace ShoppingSite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (Session["UserName"] == null || Session["UserName"].ToString() == "")
+            {
+                Response.Redirect("SignIn.aspx");
+            }
         }
         protected void btnAdminlogout_Click(object sender, EventArgs e)
         {

@@ -9,7 +9,6 @@ using System.Data;
 using System.Configuration;
 using System.IO;
 using System.Drawing;
-using System.Data.SqlClient;
 
 namespace ShoppingSite
 {
@@ -25,39 +24,39 @@ namespace ShoppingSite
                 BindCategory();
                 BindGender();
                 ddlSubCat.Enabled = false;
-                ddlGender.Enabled = false;
+                //ddlGender.Enabled = false;
 
                 BindGridView();
 
                 /*Clear all fields*/
-                txtProductName.Text = string.Empty;
-                txtPrice.Text = string.Empty;
-                txtSellPrice.Text = string.Empty;
-                ddlBrand.ClearSelection();
-                ddlBrand.Items.FindByValue("0").Selected = true;
-                ddlCategory.ClearSelection();
-                ddlCategory.Items.FindByValue("0").Selected = true;
-                ddlSubCat.ClearSelection();
-                ddlSubCat.Items.FindByValue("0").Selected = true;
-                ddlGender.ClearSelection();
-                ddlGender.Items.FindByValue("0").Selected = true;
-                cblSize.ClearSelection();
-                txtQuantity.Text = string.Empty;
-                txtDescription.Text = string.Empty;
-                txtPDetail.Text = string.Empty;
-                fuImg01.Dispose();
-                fuImg01.Attributes.Clear();
-                fuImg02.Dispose();
-                fuImg02.Attributes.Clear();
-                fuImg03.Dispose();
-                fuImg03.Attributes.Clear();
-                fuImg04.Dispose();
-                fuImg04.Attributes.Clear();
-                fuImg05.Dispose();
-                fuImg05.Attributes.Clear();
-                chFD.Checked = false;
-                ch30Ret.Checked = false;
-                cbCOD.Checked = false;
+                //txtProductName.Text = string.Empty;
+                //txtPrice.Text = string.Empty;
+                //txtSellPrice.Text = string.Empty;
+                //ddlBrand.ClearSelection();
+                //ddlBrand.Items.FindByValue("0").Selected = true;
+                //ddlCategory.ClearSelection();
+                //ddlCategory.Items.FindByValue("0").Selected = true;
+                ////ddlSubCat.ClearSelection();
+                ////ddlSubCat.Items.FindByValue("0").Selected = true;
+                //ddlGender.ClearSelection();
+                //ddlGender.Items.FindByValue("0").Selected = true;
+                //cblSize.ClearSelection();
+                //txtQuantity.Text = string.Empty;
+                //txtDescription.Text = string.Empty;
+                //txtPDetail.Text = string.Empty;
+                //fuImg01.Dispose();
+                //fuImg01.Attributes.Clear();
+                //fuImg02.Dispose();
+                //fuImg02.Attributes.Clear();
+                //fuImg03.Dispose();
+                //fuImg03.Attributes.Clear();
+                //fuImg04.Dispose();
+                //fuImg04.Attributes.Clear();
+                //fuImg05.Dispose();
+                //fuImg05.Attributes.Clear();
+                //chFD.Checked = false;
+                //ch30Ret.Checked = false;
+                //cbCOD.Checked = false;
             }
         }
 
@@ -181,137 +180,140 @@ namespace ShoppingSite
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            using (MySqlConnection con = new MySqlConnection(CS))
+            if (Page.IsValid)
             {
-                MySqlCommand cmd = new MySqlCommand("sp_InsertProduct", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("_PName",txtProductName.Text.Trim(charsToTrim));
-                cmd.Parameters.AddWithValue("_PPrice",txtPrice.Text.Trim(charsToTrim));
-                cmd.Parameters.AddWithValue("_PSellPrice", txtSellPrice.Text.Trim(charsToTrim));
-                cmd.Parameters.AddWithValue("_PBrandID", ddlBrand.SelectedItem.Value);
-                cmd.Parameters.AddWithValue("_PCategoryID", ddlCategory.SelectedItem.Value);
-                cmd.Parameters.AddWithValue("_PSubCatID", ddlSubCat.SelectedItem.Value);
-                cmd.Parameters.AddWithValue("_PGender", ddlGender.SelectedItem.Value);
-                cmd.Parameters.AddWithValue("_PDescription", txtDescription.Text.Trim(charsToTrim));
-                cmd.Parameters.AddWithValue("_PProductDetails", txtPDetail.Text.Trim(charsToTrim));
-                //cmd.Parameters.AddWithValue("_PMaterialCare", txtMatCare.Text.Trim(charsToTrim));   
-                if (chFD.Checked == true)
+                using (MySqlConnection con = new MySqlConnection(CS))
                 {
-                    cmd.Parameters.AddWithValue("_FreeDelivery", 1.ToString());
-                }
-                else
-                {
-                    cmd.Parameters.AddWithValue("_FreeDelivery", 0.ToString());
-                }
-
-                if (ch30Ret.Checked == true)
-                {
-                    cmd.Parameters.AddWithValue("_30DayRet", 1.ToString());
-                }
-                else
-                {
-                    cmd.Parameters.AddWithValue("_30DayRet", 0.ToString());
-                }
-
-                if (cbCOD.Checked == true)
-                {
-                    cmd.Parameters.AddWithValue("_COD", 1.ToString());
-                }
-                else
-                {
-                    cmd.Parameters.AddWithValue("_COD", 0.ToString());
-                }
-                if (con.State == ConnectionState.Closed) { con.Open(); }
-                Int64 PID = Convert.ToInt64(cmd.ExecuteScalar());
-
-
-                // Insert size quantity
-                for (int i = 0; i < cblSize.Items.Count; i++)
-                {
-                    if (cblSize.Items[i].Selected == true)
+                    MySqlCommand cmd = new MySqlCommand("sp_InsertProduct", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("_PName", txtProductName.Text.Trim(charsToTrim));
+                    cmd.Parameters.AddWithValue("_PPrice", txtPrice.Text.Trim(charsToTrim));
+                    cmd.Parameters.AddWithValue("_PSellPrice", txtSellPrice.Text.Trim(charsToTrim));
+                    cmd.Parameters.AddWithValue("_PBrandID", ddlBrand.SelectedItem.Value);
+                    cmd.Parameters.AddWithValue("_PCategoryID", ddlCategory.SelectedItem.Value);
+                    cmd.Parameters.AddWithValue("_PSubCatID", ddlSubCat.SelectedItem.Value);
+                    cmd.Parameters.AddWithValue("_PGender", ddlGender.SelectedItem.Value);
+                    cmd.Parameters.AddWithValue("_PDescription", txtDescription.Text.Trim(charsToTrim));
+                    cmd.Parameters.AddWithValue("_PProductDetails", txtPDetail.Text.Trim(charsToTrim));
+                    //cmd.Parameters.AddWithValue("_PMaterialCare", txtMatCare.Text.Trim(charsToTrim));   
+                    if (chFD.Checked == true)
                     {
-                        Int64 SizeID = Convert.ToInt64(cblSize.Items[i].Value);
-                        int Quantity = Convert.ToInt32(txtQuantity.Text.Trim(charsToTrim));
-
-                        MySqlCommand cmd2 = new MySqlCommand("Insert into tblProductSizeQuantity (PID, SizeID, Quantity) values ('" + PID + "','" + 
-                            SizeID + "','" + Quantity + "')", con);
-                        cmd2.ExecuteNonQuery();
+                        cmd.Parameters.AddWithValue("_FreeDelivery", 1.ToString());
                     }
-                }
-                // Insert and Upload images
-                if (fuImg01.HasFile)
-                {
-                    string SavePath = Server.MapPath("~/Images/ProductImages/") + PID;
-                    if (!Directory.Exists(SavePath))
+                    else
                     {
-                        Directory.CreateDirectory(SavePath);
+                        cmd.Parameters.AddWithValue("_FreeDelivery", 0.ToString());
                     }
-                    string Extension = Path.GetExtension(fuImg01.PostedFile.FileName);
-                    fuImg01.SaveAs(SavePath + "\\" + txtProductName.Text.ToString().Trim(charsToTrim) + "01" + Extension);
 
-                    MySqlCommand cmd3 = new MySqlCommand("Insert into tblProductImages (PID, Name, Extension) values ('" + PID + "','" +
-                        txtProductName.Text.ToString().Trim(charsToTrim) + "01" + "','" + Extension + "')", con);
-                    cmd3.ExecuteNonQuery();
-                }
-                // 2nd File Upload
-                if (fuImg02.HasFile)
-                {
-                    string SavePath = Server.MapPath("~/Images/ProductImages/") + PID;
-                    if (!Directory.Exists(SavePath))
+                    if (ch30Ret.Checked == true)
                     {
-                        Directory.CreateDirectory(SavePath);
+                        cmd.Parameters.AddWithValue("_30DayRet", 1.ToString());
                     }
-                    string Extension = Path.GetExtension(fuImg02.PostedFile.FileName);
-                    fuImg02.SaveAs(SavePath + "\\" + txtProductName.Text.ToString().Trim(charsToTrim) + "02" + Extension);
-
-                    MySqlCommand cmd4 = new MySqlCommand("Insert into tblProductImages (PID, Name, Extension) values ('" + PID + "','" +
-                        txtProductName.Text.ToString().Trim(charsToTrim) + "02" + "','" + Extension + "')", con);
-                    cmd4.ExecuteNonQuery();
-                }
-                // 3rd File Upload
-                if (fuImg03.HasFile)
-                {
-                    string SavePath = Server.MapPath("~/Images/ProductImages/") + PID;
-                    if (!Directory.Exists(SavePath))
+                    else
                     {
-                        Directory.CreateDirectory(SavePath);
+                        cmd.Parameters.AddWithValue("_30DayRet", 0.ToString());
                     }
-                    string Extension = Path.GetExtension(fuImg03.PostedFile.FileName);
-                    fuImg03.SaveAs(SavePath + "\\" + txtProductName.Text.ToString().Trim(charsToTrim) + "03" + Extension);
 
-                    MySqlCommand cmd5 = new MySqlCommand("Insert into tblProductImages (PID, Name, Extension) values ('" + PID + "','" +
-                        txtProductName.Text.ToString().Trim(charsToTrim) + "03" + "','" + Extension + "')", con);
-                    cmd5.ExecuteNonQuery();
-                }
-                // 4th File Upload
-                if (fuImg04.HasFile)
-                {
-                    string SavePath = Server.MapPath("~/Images/ProductImages/") + PID;
-                    if (!Directory.Exists(SavePath))
+                    if (cbCOD.Checked == true)
                     {
-                        Directory.CreateDirectory(SavePath);
+                        cmd.Parameters.AddWithValue("_COD", 1.ToString());
                     }
-                    string Extension = Path.GetExtension(fuImg04.PostedFile.FileName);
-                    fuImg04.SaveAs(SavePath + "\\" + txtProductName.Text.ToString().Trim(charsToTrim) + "04" + Extension);
-
-                    MySqlCommand cmd6 = new MySqlCommand("Insert into tblProductImages (PID, Name, Extension) values ('" + PID + "','" +
-                        txtProductName.Text.ToString().Trim(charsToTrim) + "04" + "','" + Extension + "')", con);
-                    cmd6.ExecuteNonQuery();
-                }
-                // 5th File Upload
-                if (fuImg05.HasFile)
-                {
-                    string SavePath = Server.MapPath("~/Images/ProductImages/") + PID;
-                    if (!Directory.Exists(SavePath))
+                    else
                     {
-                        Directory.CreateDirectory(SavePath);
+                        cmd.Parameters.AddWithValue("_COD", 0.ToString());
                     }
-                    string Extension = Path.GetExtension(fuImg05.PostedFile.FileName);
-                    fuImg05.SaveAs(SavePath + "\\" + txtProductName.Text.ToString().Trim(charsToTrim) + "05" + Extension);
+                    if (con.State == ConnectionState.Closed) { con.Open(); }
+                    Int64 PID = Convert.ToInt64(cmd.ExecuteScalar());
 
-                    MySqlCommand cmd7 = new MySqlCommand("Insert into tblProductImages (PID, Name, Extension) values ('" + PID + "','" +
-                        txtProductName.Text.ToString().Trim(charsToTrim) + "05" + "','" + Extension + "')", con);
-                    cmd7.ExecuteNonQuery();
+
+                    // Insert size quantity
+                    for (int i = 0; i < cblSize.Items.Count; i++)
+                    {
+                        if (cblSize.Items[i].Selected == true)
+                        {
+                            Int64 SizeID = Convert.ToInt64(cblSize.Items[i].Value);
+                            int Quantity = Convert.ToInt32(txtQuantity.Text.Trim(charsToTrim));
+
+                            MySqlCommand cmd2 = new MySqlCommand("Insert into tblProductSizeQuantity (PID, SizeID, Quantity) values ('" + PID + "','" +
+                                SizeID + "','" + Quantity + "')", con);
+                            cmd2.ExecuteNonQuery();
+                        }
+                    }
+                    // Insert and Upload images
+                    if (fuImg01.HasFile)
+                    {
+                        string SavePath = Server.MapPath("~/Images/ProductImages/") + PID;
+                        if (!Directory.Exists(SavePath))
+                        {
+                            Directory.CreateDirectory(SavePath);
+                        }
+                        string Extension = Path.GetExtension(fuImg01.PostedFile.FileName);
+                        fuImg01.SaveAs(SavePath + "\\" + txtProductName.Text.ToString().Trim(charsToTrim) + "01" + Extension);
+
+                        MySqlCommand cmd3 = new MySqlCommand("Insert into tblProductImages (PID, Name, Extension) values ('" + PID + "','" +
+                            txtProductName.Text.ToString().Trim(charsToTrim) + "01" + "','" + Extension + "')", con);
+                        cmd3.ExecuteNonQuery();
+                    }
+                    // 2nd File Upload
+                    if (fuImg02.HasFile)
+                    {
+                        string SavePath = Server.MapPath("~/Images/ProductImages/") + PID;
+                        if (!Directory.Exists(SavePath))
+                        {
+                            Directory.CreateDirectory(SavePath);
+                        }
+                        string Extension = Path.GetExtension(fuImg02.PostedFile.FileName);
+                        fuImg02.SaveAs(SavePath + "\\" + txtProductName.Text.ToString().Trim(charsToTrim) + "02" + Extension);
+
+                        MySqlCommand cmd4 = new MySqlCommand("Insert into tblProductImages (PID, Name, Extension) values ('" + PID + "','" +
+                            txtProductName.Text.ToString().Trim(charsToTrim) + "02" + "','" + Extension + "')", con);
+                        cmd4.ExecuteNonQuery();
+                    }
+                    // 3rd File Upload
+                    if (fuImg03.HasFile)
+                    {
+                        string SavePath = Server.MapPath("~/Images/ProductImages/") + PID;
+                        if (!Directory.Exists(SavePath))
+                        {
+                            Directory.CreateDirectory(SavePath);
+                        }
+                        string Extension = Path.GetExtension(fuImg03.PostedFile.FileName);
+                        fuImg03.SaveAs(SavePath + "\\" + txtProductName.Text.ToString().Trim(charsToTrim) + "03" + Extension);
+
+                        MySqlCommand cmd5 = new MySqlCommand("Insert into tblProductImages (PID, Name, Extension) values ('" + PID + "','" +
+                            txtProductName.Text.ToString().Trim(charsToTrim) + "03" + "','" + Extension + "')", con);
+                        cmd5.ExecuteNonQuery();
+                    }
+                    // 4th File Upload
+                    if (fuImg04.HasFile)
+                    {
+                        string SavePath = Server.MapPath("~/Images/ProductImages/") + PID;
+                        if (!Directory.Exists(SavePath))
+                        {
+                            Directory.CreateDirectory(SavePath);
+                        }
+                        string Extension = Path.GetExtension(fuImg04.PostedFile.FileName);
+                        fuImg04.SaveAs(SavePath + "\\" + txtProductName.Text.ToString().Trim(charsToTrim) + "04" + Extension);
+
+                        MySqlCommand cmd6 = new MySqlCommand("Insert into tblProductImages (PID, Name, Extension) values ('" + PID + "','" +
+                            txtProductName.Text.ToString().Trim(charsToTrim) + "04" + "','" + Extension + "')", con);
+                        cmd6.ExecuteNonQuery();
+                    }
+                    // 5th File Upload
+                    if (fuImg05.HasFile)
+                    {
+                        string SavePath = Server.MapPath("~/Images/ProductImages/") + PID;
+                        if (!Directory.Exists(SavePath))
+                        {
+                            Directory.CreateDirectory(SavePath);
+                        }
+                        string Extension = Path.GetExtension(fuImg05.PostedFile.FileName);
+                        fuImg05.SaveAs(SavePath + "\\" + txtProductName.Text.ToString().Trim(charsToTrim) + "05" + Extension);
+
+                        MySqlCommand cmd7 = new MySqlCommand("Insert into tblProductImages (PID, Name, Extension) values ('" + PID + "','" +
+                            txtProductName.Text.ToString().Trim(charsToTrim) + "05" + "','" + Extension + "')", con);
+                        cmd7.ExecuteNonQuery();
+                    }                    
                 }
                 Response.Write("<script type='text/javascript'>alert('Product added Successfully')</script>");
                 txtProductName.Text = string.Empty;
@@ -321,14 +323,14 @@ namespace ShoppingSite
                 ddlBrand.Items.FindByValue("0").Selected = true;
                 ddlCategory.ClearSelection();
                 ddlCategory.Items.FindByValue("0").Selected = true;
-                ddlSubCat.ClearSelection();
-                ddlSubCat.Items.FindByValue("0").Selected = true;
+                //ddlSubCat.ClearSelection();
+                //ddlSubCat.Items.FindByValue("0").Selected = true;
                 ddlGender.ClearSelection();
                 ddlGender.Items.FindByValue("0").Selected = true;
                 cblSize.ClearSelection();
                 txtQuantity.Text = string.Empty;
-                txtDescription.Text=string.Empty;
-                txtPDetail.Text=string.Empty;
+                txtDescription.Text = string.Empty;
+                txtPDetail.Text = string.Empty;
                 fuImg01.Dispose();
                 fuImg01.Attributes.Clear();
                 fuImg02.Dispose();
@@ -342,6 +344,10 @@ namespace ShoppingSite
                 chFD.Checked = false;
                 ch30Ret.Checked = false;
                 cbCOD.Checked = false;
+            }
+            else
+            {
+                Response.Write("<script type='text/javascript'>alert('Product could not be added, please fill all the required fields')</script>");
             }
         }
 

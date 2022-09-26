@@ -70,7 +70,7 @@ namespace ShoppingSite
             if (con.State == ConnectionState.Closed) { con.Open(); }
             MySqlDataAdapter da = new MySqlDataAdapter("SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED ;  select t1.SizeID,t1.SizeName,t2.Name " +
                 "as Brand,t3.CatName as Category,t4.SubCatName as SubCategory,t5.GenderName as Gender from tblSizes as t1 inner join tblBrands " +
-                "as t2 on t2.BrandID=t1.BrandID inner join tblCategory as t3 on t3.CatID=t1.CategoryID inner join tblSubCategory as on " +
+                "as t2 on t2.BrandID=t1.BrandID inner join tblCategory as t3 on t3.CatID=t1.CategoryID inner join tblSubCategory as t4 on " +
                 "t4.SubCatID=t1.SubCategoryID inner join tblGender as t5 on t5.GenderID=t1.GenderID;  COMMIT ;  SET TRANSACTION ISOLATION LEVEL " +
                 "REPEATABLE READ ;", con);
             DataTable dt = new DataTable();

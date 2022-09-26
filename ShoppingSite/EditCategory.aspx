@@ -11,20 +11,24 @@
          <div class ="col-md-6"> 
 
          <div class="row">
-         <div class="col-md-6">
-         <div class="form-group">
-                        <label>Enter Category ID:</label>
-                        <asp:TextBox ID="txtID" CssClass="form-control" runat="server" AutoPostBack="true"  ontextchanged="txtID_TextChanged"></asp:TextBox> 
-                        
+             <div class="col-md-6">
+                 <div class="form-group">
+                     <label>Enter Category ID:</label>
+                     <asp:TextBox ID="txtID" CssClass="form-control" runat="server" AutoPostBack="true"  ontextchanged="txtID_TextChanged"></asp:TextBox>
+                     <asp:RequiredFieldValidator ID="RequiredFieldValidatorCatID" runat="server" CssClass="text-danger" 
+                            ErrorMessage="Enter Category ID" ControlToValidate="txtID" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                     <div class="form-group">
                    
                     </div>
-         </div>
-         <div class="col-md-6">
-         <div class="form-group">
-                        <label>Enter Category Name:</label>
-                        <asp:TextBox ID="txtUpdateCatName" CssClass="form-control" runat="server"></asp:TextBox>
+             </div>
+
+             <div class="col-md-6">
+                 <div class="form-group">
+                     <label>Enter Category Name:</label>
+                     <asp:TextBox ID="txtUpdateCatName" CssClass="form-control" runat="server"></asp:TextBox>
+                     <asp:RequiredFieldValidator ID="RequiredFieldValidatorCatName" runat="server" CssClass="text-danger" 
+                            ErrorMessage="Enter Category name" ControlToValidate="txtUpdateCatName" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
          
           <div class="form-group">
@@ -65,6 +69,7 @@
 
 
  <script type="text/javascript">
+     document.getElementById("txtFilterGrid1Record").onkeyup = function () { Search_Gridview(strKey) };
      function Search_Gridview(strKey) {
          var strData = strKey.value.toLowerCase().split(" ");
          var tblData = document.getElementById("<%=GridView1.ClientID %>");

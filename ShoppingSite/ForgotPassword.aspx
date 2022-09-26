@@ -99,7 +99,7 @@
 
     <!--Footer Content Start-->
 
-        <hr />
+        <hr style="clear: both; visibility: hidden;"/>
         <footer class="footer-pos">
             <div class="container">
                 <p class ="pull-right "><a href ="#">&nbsp; &nbsp; Back to top &nbsp; &nbsp;</a></p>

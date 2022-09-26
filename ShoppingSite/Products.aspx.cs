@@ -108,11 +108,6 @@ namespace ShoppingSite
             }
         }
 
-        protected void btnCart2_ServerClick(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Cart.aspx");
-        }
-
         protected void txtFilterGrid1Record_TextChanged(object sender, EventArgs e)
         {
             if (txtFilterGrid1Record.Text != string.Empty)
@@ -140,6 +135,14 @@ namespace ShoppingSite
             {
                 BindProductRepeater();
             }
+        }
+        //protected void btnCart2_ServerClick(object sender, EventArgs e)
+        //{
+        //    Response.Redirect("~/Cart.aspx");
+        //}
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Cart.aspx");
         }
     }
 }

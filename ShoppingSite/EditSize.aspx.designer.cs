@@ -24,6 +24,15 @@ namespace ShoppingSite
         protected global::System.Web.UI.WebControls.TextBox txtID;
 
         /// <summary>
+        /// RequiredFieldValidatorSizeID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorSizeID;
+
+        /// <summary>
         /// txtSize control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace ShoppingSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSize;
+
+        /// <summary>
+        /// RequiredFieldValidatorSizeName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorSizeName;
 
         /// <summary>
         /// ddlBrand control.
@@ -42,6 +60,15 @@ namespace ShoppingSite
         protected global::System.Web.UI.WebControls.DropDownList ddlBrand;
 
         /// <summary>
+        /// RequiredFieldValidatorddlBrand control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorddlBrand;
+
+        /// <summary>
         /// ddlCategory control.
         /// </summary>
         /// <remarks>
@@ -49,6 +76,15 @@ namespace ShoppingSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlCategory;
+
+        /// <summary>
+        /// RequiredFieldValidatorddlCat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorddlCat;
 
         /// <summary>
         /// ddlSubCategory control.
@@ -60,6 +96,15 @@ namespace ShoppingSite
         protected global::System.Web.UI.WebControls.DropDownList ddlSubCategory;
 
         /// <summary>
+        /// RequiredFieldValidatorddlSubCat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorddlSubCat;
+
+        /// <summary>
         /// ddlGender control.
         /// </summary>
         /// <remarks>
@@ -67,6 +112,15 @@ namespace ShoppingSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlGender;
+
+        /// <summary>
+        /// RequiredFieldValidatorddlGender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorddlGender;
 
         /// <summary>
         /// btnUpdateSubCategory control.

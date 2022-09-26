@@ -14,6 +14,8 @@
                             <label>Enter ID:</label>
                             <asp:TextBox ID="txtID" CssClass="form-control" runat="server" AutoPostBack="true"  
                                 ontextchanged="txtID_TextChanged"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorBrandID" runat="server" CssClass="text-danger" 
+                                ErrorMessage="Enter Brand ID" ControlToValidate="txtID" ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>
                         
                         <div class="form-group">
@@ -25,7 +27,8 @@
                         <div class="form-group">
                             <label>Enter Brand:</label>
                             <asp:TextBox ID="txtUpdateBrandName" CssClass="form-control" runat="server"></asp:TextBox>
-
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorBrandName" runat="server" CssClass="text-danger" 
+                                ErrorMessage="Enter Brand name" ControlToValidate="txtUpdateBrandName" ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>
                         
                         <div class="form-group">
@@ -60,6 +63,7 @@
     </div>
     
     <script type="text/javascript">
+        document.getElementById("txtFilterGrid1Record").onkeyup = function () { Search_Gridview(strKey) };
         function Search_Gridview(strKey) {
             var strData = strKey.value.toLowerCase().split(" ");
             var tblData = document.getElementById("<%=GridView1.ClientID %>");

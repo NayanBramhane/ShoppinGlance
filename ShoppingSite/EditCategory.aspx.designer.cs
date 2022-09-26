@@ -24,6 +24,15 @@ namespace ShoppingSite
         protected global::System.Web.UI.WebControls.TextBox txtID;
 
         /// <summary>
+        /// RequiredFieldValidatorCatID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorCatID;
+
+        /// <summary>
         /// txtUpdateCatName control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace ShoppingSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtUpdateCatName;
+
+        /// <summary>
+        /// RequiredFieldValidatorCatName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorCatName;
 
         /// <summary>
         /// btnUpdateBrand control.

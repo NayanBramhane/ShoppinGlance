@@ -25,7 +25,7 @@
                         
                         <asp:DropDownList ID="ddlBrand" CssClass ="form-control" runat="server"></asp:DropDownList>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorBrand" runat="server" CssClass ="text-danger" 
-                            ErrorMessage=" Select Brand" ControlToValidate="ddlBrand" ForeColor="Red"></asp:RequiredFieldValidator>
+                            ErrorMessage=" Select Brand" ControlToValidate="ddlBrand" ForeColor="Red" InitialValue="0"></asp:RequiredFieldValidator>
                     </div>
                 </div>
 
@@ -36,7 +36,7 @@
                         <asp:DropDownList ID="ddlCategory" CssClass ="form-control" runat="server" 
                             OnSelectedIndexChanged="ddlCategory_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorCategory" runat="server" CssClass ="text-danger" 
-                            ErrorMessage=" Select Category" ControlToValidate="ddlCategory" ForeColor="Red"></asp:RequiredFieldValidator>
+                            ErrorMessage=" Select Category" ControlToValidate="ddlCategory" ForeColor="Red" InitialValue="0"></asp:RequiredFieldValidator>
                     </div> 
                 </div>
 
@@ -56,7 +56,7 @@
 
                         <asp:DropDownList ID="ddlGender" CssClass ="form-control" runat="server"></asp:DropDownList>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorGender" runat="server" CssClass ="text-danger" 
-                            ErrorMessage=" Select Gender" ControlToValidate="ddlGender" ForeColor="Red"></asp:RequiredFieldValidator>
+                            ErrorMessage=" Select Gender" ControlToValidate="ddlGender" ForeColor="Red" InitialValue="0"></asp:RequiredFieldValidator>
                     </div>
                 </div>
                 
@@ -67,7 +67,8 @@
                     <div class ="col-md-2 "> </div>
                     <div class ="col-md-6 ">
 
-                        <asp:Button ID="btnAddSize" CssClass ="btn btn-success " runat="server" Text="Add Size" OnClick="btnAddSize_Click"/>
+                        <asp:Button ID="btnAddSize" CssClass ="btn btn-success " runat="server" Text="Add Size" OnClick="btnAddSize_Click" 
+                            CausesValidation="true"/>
                         
                     </div>
                 </div>

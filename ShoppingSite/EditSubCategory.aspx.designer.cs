@@ -24,6 +24,15 @@ namespace ShoppingSite
         protected global::System.Web.UI.WebControls.TextBox txtID;
 
         /// <summary>
+        /// RequiredFieldValidatorID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorID;
+
+        /// <summary>
         /// btnUpdateSubCategory control.
         /// </summary>
         /// <remarks>
@@ -42,6 +51,15 @@ namespace ShoppingSite
         protected global::System.Web.UI.WebControls.DropDownList ddlMainCategory;
 
         /// <summary>
+        /// RequiredFieldValidatorddlMainCat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorddlMainCat;
+
+        /// <summary>
         /// txtSubCategory control.
         /// </summary>
         /// <remarks>
@@ -49,6 +67,15 @@ namespace ShoppingSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSubCategory;
+
+        /// <summary>
+        /// RequiredFieldValidatorSubCat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorSubCat;
 
         /// <summary>
         /// txtFilterGrid1Record control.

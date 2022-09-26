@@ -163,7 +163,7 @@
 
         <!--Footer Content Start-->
 
-<footer class="container-fluid text-center footer-pos">
+<footer class="container-fluid text-center">
     
   <a href="#MyPage" title="To Top">
     <span class="glyphicon glyphicon-chevron-up"></span>

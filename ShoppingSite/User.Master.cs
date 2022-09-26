@@ -16,9 +16,9 @@ namespace ShoppingSite
         public static String CS = ConfigurationManager.ConnectionStrings["MyShoppingDB"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (Session["Username"] != null)
             {
-                if (Session["Username"] != null)
+                if (!IsPostBack)
                 {
                     //lblSuccess.Text = "Login Success, Welcome " + Session["Username"].ToString();
                     btnlogout.Visible = true;

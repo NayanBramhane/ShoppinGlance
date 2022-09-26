@@ -4,10 +4,15 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br /><br /><br />
-
-    <button id="btnCart2" runat="server" class="btn btn-primary navbar-btn pull-right" onserverclick="btnCart2_ServerClick" type="button">
-                        Cart <span id="CartBadge" runat="server" class="badge">0</span>
-    </button>
+    
+    <%--<button id="btnCart2" runat="server" class="btn btn-primary navbar-btn pull-right" onserverclick="btnCart2_ServerClick" type="button">
+        Cart <span id="CartBadge" runat="server" class="badge">0</span>
+    </button>--%>
+         
+        <asp:LinkButton ID="LinkButton1" CssClass="btn btn-primary navbar-btn pull-right" runat="server" OnClick="LinkButton1_Click">
+            Cart <span id="CartBadge" runat="server" class="badge">0</span>
+        </asp:LinkButton>
+    
     <br />
 
     <div style="padding-top:50px">
@@ -18,8 +23,8 @@
             <strong>Success! </strong>Item successfully added to cart. <a href="Cart.aspx">View Cart</a>
         </div>
 
-        <div class="col-md-5 thumbnail">
-            <div class="box" style="max-width:40%">
+        <div class="col-md-5 " style="width:400px; margin-right:15px;">
+            <div class="box" style="max-width:100%;">
                 <!------------------------------------- Product Image Slider Start ------------------------------------>
 
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -61,9 +66,8 @@
             </div>
         </div>
         <div class="col-md-5">
-
-            <asp:Repeater ID="rptrProductDetails" runat="server" OnItemDataBound="rptrProductDetails_ItemDataBound" 
-                OnItemCommand="rptrProductDetails_ItemCommand">
+            <%--OnItemCommand="rptrProductDetails_ItemCommand"-----This attribute was inside below repeater control--%>
+            <asp:Repeater ID="rptrProductDetails" runat="server" OnItemDataBound="rptrProductDetails_ItemDataBound">
             <ItemTemplate>
 
             <div class="div-det1">
@@ -101,14 +105,16 @@
                 <p><%# ((int)Eval("COD")==1)? "Cash on Delivery":"" %></p>
 
             </div>
+                
+                <asp:HiddenField ID="hfCatID" runat="server" Value='<%# Eval("PCategoryID") %>' />
+                <asp:HiddenField ID="hfSubCatID" runat="server" Value='<%# Eval("PSubCatID") %>' />
+                <asp:HiddenField ID="hfGenderID" runat="server" Value='<%# Eval("PGender") %>' />
+                <asp:HiddenField ID="hfBrandID" runat="server" Value='<%# Eval("PBrandID") %>' />
 
         </ItemTemplate>
         </asp:Repeater>
 
-            <asp:HiddenField ID="hfCatID" runat="server" Value='<%# Eval("PCategoryID") %>' />
-            <asp:HiddenField ID="hfSubCatID" runat="server" Value='<%# Eval("PSubCatID") %>' />
-            <asp:HiddenField ID="hfGenderID" runat="server" Value='<%# Eval("PGender") %>' />
-            <asp:HiddenField ID="hfBrandID" runat="server" Value='<%# Eval("PBrandID") %>' />
+            
 
         </div>
     </div>

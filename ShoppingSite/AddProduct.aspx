@@ -2,6 +2,25 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <%--Script to check if at least one checkbox is selected starts--%>
+
+    <script type="text/javascript">
+        function ValidateCheckBoxList(sender, args) {
+            var checkBoxList = document.getElementById("<%=cblSize.ClientID %>");
+            var checkboxes = checkBoxList.getElementsByTagName("input");
+            var isValid = false;
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    isValid = true;
+                    break;
+                }
+            }
+            args.IsValid = isValid;
+        }
+    </script>
+
+    <%--Script ends--%>
+
     <div class="container">
         <div class="form-horizontal">
 
@@ -12,7 +31,7 @@
                 <asp:Label ID="Label1" runat="server" CssClass="col-md-2 control-label" Text="Product Name"></asp:Label>
                 <div class="col-md-3">
 
-                    <asp:TextBox ID="txtProductName" CssClass="form-control" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtProductName" CssClass="form-control" runat="server"></asp:TextBox>                    
                     <asp:RequiredFieldValidator ID="RequiredFieldValidatortxtProductName" runat="server" CssClass ="text-danger" 
                             ErrorMessage="Enter Product Name" ControlToValidate="txtProductName" ForeColor="Red"></asp:RequiredFieldValidator>
 
@@ -40,9 +59,8 @@
                             ErrorMessage="Enter Selling Price" ControlToValidate="txtSellPrice" ForeColor="Red"></asp:RequiredFieldValidator>
                     <asp:CompareValidator ID="CompareValidator2" runat="server" ErrorMessage="Enter Correct Price" CssClass ="text-danger"
                         ControlToValidate="txtSellPrice" ForeColor="Red" Operator="DataTypeCheck" Type="Double"></asp:CompareValidator>
-                    <asp:CompareValidator ID="CompareValidator4" runat="server" ErrorMessage="Selling Price should be less than Original Price" 
-                        ControlToCompare="txtPrice" ControlToValidate="txtSellPrice" ForeColor="Red" Operator="GreaterThan" CssClass ="text-danger">
-                    </asp:CompareValidator>
+                    <%--<asp:CompareValidator ID="CompareValidator4" runat="server" ErrorMessage="Selling Price should be less than or equal to Original Price" 
+                        ControlToCompare="txtPrice" ControlToValidate="txtSellPrice" ForeColor="Red" Operator="LessThan" CssClass ="text-danger"></asp:CompareValidator>--%>
 
                 </div>
             </div>
@@ -53,7 +71,7 @@
 
                     <asp:DropDownList ID="ddlBrand" CssClass ="form-control" runat="server"></asp:DropDownList>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidatorddlBrand" runat="server" CssClass ="text-danger" 
-                            ErrorMessage="Select Brand" ControlToValidate="ddlBrand" ForeColor="Red"></asp:RequiredFieldValidator>
+                            ErrorMessage="Select Brand" ControlToValidate="ddlBrand" ForeColor="Red" InitialValue="0"></asp:RequiredFieldValidator>
 
                 </div>
             </div>
@@ -65,7 +83,7 @@
                     <asp:DropDownList ID="ddlCategory" CssClass="form-control" autopostback="true" runat="server" 
                         OnSelectedIndexChanged="ddlCategory_SelectedIndexChanged"></asp:DropDownList>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidatorddlCategory" runat="server" CssClass ="text-danger" 
-                            ErrorMessage="Select Category" ControlToValidate="ddlCategory" ForeColor="Red"></asp:RequiredFieldValidator>
+                            ErrorMessage="Select Category" ControlToValidate="ddlCategory" ForeColor="Red" InitialValue="0"></asp:RequiredFieldValidator>
 
                 </div>
             </div>
@@ -89,7 +107,7 @@
                     <asp:DropDownList ID="ddlGender" CssClass ="form-control" runat="server" AutoPostBack="True" 
                         OnSelectedIndexChanged="ddlGender_SelectedIndexChanged"></asp:DropDownList>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidatorddlGender" runat="server" CssClass ="text-danger" 
-                            ErrorMessage="Select Gender" ControlToValidate="ddlGender" ForeColor="Red"></asp:RequiredFieldValidator>
+                            ErrorMessage="Select Gender" ControlToValidate="ddlGender" ForeColor="Red" InitialValue="0"></asp:RequiredFieldValidator>
 
                 </div>
             </div>
@@ -99,8 +117,11 @@
                 <div class="col-md-3">
 
                     <asp:CheckBoxList ID="cblSize" CssClass="form-control" RepeatDirection="Horizontal" runat="server"></asp:CheckBoxList>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorcblSize" runat="server" CssClass ="text-danger" 
-                            ErrorMessage="Select Size" ControlToValidate="cblSize" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <%----------------------Check if at least one checkbox is selected-------------------------%>
+                    <asp:CustomValidator ID="CustomValidatorcblSize" runat="server" CssClass="text-danger" ErrorMessage="Select at least one checkbox" 
+                        ForeColor="Red" ClientValidationFunction="ValidateCheckBoxList"></asp:CustomValidator>
+                    <%--<asp:RequiredFieldValidator ID="RequiredFieldValidatorcblSize" runat="server" CssClass ="text-danger" 
+                            ErrorMessage="Select Size" ControlToValidate="cblSize" ForeColor="Red"></asp:RequiredFieldValidator>--%>
 
                 </div>
             </div>
@@ -214,7 +235,7 @@
             <div class="form-group">
                 <div class="col-md-2"></div>
                 <div class="col-md-6">
-                    <asp:Button ID="btnAdd" CssClass="btn btn-success" runat="server" Text="Add Product" OnClick="btnAdd_Click"/>
+                    <asp:Button ID="btnAdd" CssClass="btn btn-success" runat="server" Text="Add Product" OnClick="btnAdd_Click" CausesValidation="true"/>
                 </div>
             </div>
 
@@ -236,7 +257,7 @@
                         <asp:BoundField DataField="PID" HeaderText="S.No." />  
                         <asp:BoundField DataField="PName" HeaderText="PName" />  
                         <asp:BoundField DataField="PPrice" HeaderText="Price" />  
-                        <asp:BoundField DataField="PSelPrice" HeaderText="SellPrice" />  
+                        <asp:BoundField DataField="PSellPrice" HeaderText="SellPrice" />  
                         <asp:BoundField DataField="Brand" HeaderText="Brand" />  
                         <asp:BoundField DataField="CatName" HeaderText="Category" />  
                         <asp:BoundField DataField="SubCatName" HeaderText="SubCategory" />
@@ -245,11 +266,11 @@
                         <asp:BoundField DataField="SizeName" HeaderText="SizeName" />  
                         <asp:BoundField DataField="Quantity" HeaderText="Quantity" />
                         
-                        <asp:TemplateField HeaderText="Photo">  
+                        <%--<asp:TemplateField HeaderText="Photo">
                         <ItemTemplate>  
-                        <%-- <img src="Images/ProductImages/<%# Eval("PID") %>/<%# Eval("ImageName") %><%# Eval("Extention") %>" alt="<%# Eval("ImageName") %>" style=" height:150px; width:150px;"/> --%>
+                        <img src="Images/ProductImages/<%# Eval("PID") %>/<%# Eval("ImageName") %><%# Eval("Extention") %>" alt="<%# Eval("ImageName") %>" style=" height:150px; width:150px;"/>
                         </ItemTemplate>  
-                        </asp:TemplateField> 
+                        </asp:TemplateField>--%>
 
                        <%-- <asp:CommandField ShowEditButton="true" />  
                         <asp:CommandField ShowDeleteButton="true" />--%>

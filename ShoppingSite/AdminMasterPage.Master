@@ -94,7 +94,7 @@
     <!--Footer Content Start-->
 
         <hr  style="clear: both; visibility: hidden;"/>
-        <footer class="footer-pos">
+        <footer>
             <div class="container">
                 <p class ="pull-right "><a href ="#">&nbsp; &nbsp; Back to top &nbsp; &nbsp;</a></p>
                 <p class ="pull-right "><a href="SignIn.aspx"> User Login  </a></p>

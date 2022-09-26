@@ -10,7 +10,9 @@
                <div class="col-md-3">
                <div class="form-group">
                <label>Enter SubCatID:</label>
-                  <asp:TextBox ID="txtID" CssClass="form-control" runat="server" AutoPostBack="true"  ontextchanged="txtID_TextChanged"></asp:TextBox> 
+                   <asp:TextBox ID="txtID" CssClass="form-control" runat="server" AutoPostBack="true"  ontextchanged="txtID_TextChanged"></asp:TextBox>
+                   <asp:RequiredFieldValidator ID="RequiredFieldValidatorID" runat="server" CssClass="text-danger" 
+                       ErrorMessage="Enter SubCategory ID" ControlToValidate="txtID" ForeColor="Red"></asp:RequiredFieldValidator>
                </div>
                   
                   <div class="form-group">
@@ -20,12 +22,15 @@
                </div>
                <div class="col-md-3">
                 <label>Select Category:</label>
-                   <asp:DropDownList ID="ddlMainCategory" CssClass="form-control" runat="server">
-                   </asp:DropDownList>
+                   <asp:DropDownList ID="ddlMainCategory" CssClass="form-control" runat="server"></asp:DropDownList>
+                   <asp:RequiredFieldValidator ID="RequiredFieldValidatorddlMainCat" runat="server" CssClass="text-danger" 
+                       ErrorMessage="Select Category" ControlToValidate="ddlMainCategory" ForeColor="Red"></asp:RequiredFieldValidator>
                </div>
                <div class="col-md-3">
                <label>Sub Category:</label>
                    <asp:TextBox ID="txtSubCategory" CssClass="form-control" runat="server"></asp:TextBox>
+                   <asp:RequiredFieldValidator ID="RequiredFieldValidatorSubCat" runat="server" CssClass="text-danger" 
+                       ErrorMessage="Enter SubCategory" ControlToValidate="txtSubCategory" ForeColor="Red"></asp:RequiredFieldValidator>
                </div>
            
            </div>
@@ -50,6 +55,7 @@
 </div>
 
 <script type="text/javascript">
+    document.getElementById("txtFilterGrid1Record").onkeyup = function () { Search_Gridview(strKey) };
     function Search_Gridview(strKey) {
         var strData = strKey.value.toLowerCase().split(" ");
         var tblData = document.getElementById("<%=GridView1.ClientID %>");

@@ -39,7 +39,7 @@
             <div class="media" style="border:1px solid black">
                 <div class="media-left">
                     <a href="ProductView.aspx?PID=<%# Eval("PID") %>" target="_blank">
-                        <img class="media-object" width="100px" src="Images/ProductImages/<%# Eval("PID") %>/<%# Eval("Name") %><%# Eval("Extension") %>" alt="<%# Eval("Name") %>" onerror="this.src='Images/NoImg.jpeg'"/>
+                        <img class="media-object" width="100" src="Images/ProductImages/<%# Eval("PID") %>/<%# Eval("Name") %><%# Eval("Extension") %>" alt="<%# Eval("Name") %>" onerror="this.src='Images/NoImg.jpeg'"/>
                     </a>
                 </div>
                 <div class="media-body">
@@ -61,12 +61,12 @@
                     </div>
                     <br />
 
-                    <p>
+                    <div>
                         <asp:Button CommandArgument="'<%#Eval("CartID") %>'" CommandName="RemoveThisCart" ID="btnRemoveCart" 
                             CssClass="remove-cart-button" runat="server" Text="Remove"/>
                         <br />
                         <span class="pro-name-view-cart pull-right">SubTotal: Rs.&nbsp; <%# Eval("SubSAmount","{0:0.00}") %></span>
-                    </p>
+                    </div>
                 </div>
             </div>
 

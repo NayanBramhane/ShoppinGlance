@@ -51,7 +51,7 @@ namespace ShoppingSite
                     String EmailBody = "Hi, " + Username + ", <br/><br/>Click the link given below to reset your password<br/> <br/> " +
                         "https://localhost:44329/RecoverPassword.aspx?id=" + myGUID;
 
-                    MailMessage PassRecMail = new MailMessage("Your mail.com", ToEmailAddress);
+                    MailMessage PassRecMail = new MailMessage("Your mail.com", ToEmailAddress);     //Here enter your e-mail
 
                     PassRecMail.Body = EmailBody;
                     PassRecMail.IsBodyHtml = true;
@@ -61,7 +61,7 @@ namespace ShoppingSite
                     {
                         client.EnableSsl = true;
                         client.UseDefaultCredentials = false;
-                        client.Credentials = new NetworkCredential("Your mail.com", "Your Password");
+                        client.Credentials = new NetworkCredential("Your mail.com", "Your Password");       //Here enter your e-mail and password
                         client.Host = "smtp.gmail.com";
                         client.Port = 587;
                         client.DeliveryMethod = SmtpDeliveryMethod.Network;

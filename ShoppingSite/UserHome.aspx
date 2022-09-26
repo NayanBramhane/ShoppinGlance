@@ -16,7 +16,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript" src="js/btnCart.js"></script>
+    <script>
+
+        $(document).ready(function myfunction() {
+            $("#btnCart").click(function myfunction() {
+                window.location.href = "Cart.aspx";
+            });
+        });
+
+    </script>
 
     <link rel="stylesheet" type="text/css" target="_blank" href="css/mystyle.css">
 
@@ -94,21 +102,21 @@
         <asp:Label ID="lblSuccess" CssClass="text-success" runat="server"></asp:Label>
 
         <!-- Middle Content Starts -->
-
+        <br /><br /><br />
         <div class="container center">
             <div class="row">
 
-                <div class="col-lg-4">
+                <div class="col-lg-4 UH">
                     <img src="ProductImages/iphone-14-pro-storage-select-202209-6-7inch-deeppurple.jpg" alt="iphone" height="400" width="450"/>
                     <p><a class="btn btn-default" href="Products.aspx" role="button">View More &raquo;</a></p>
                 </div>
 
-                <div class="col-lg-4">
-                    <img src="ProductImages/JL03373-YGP9EB_1_lar.jpg" alt="Necklace" height="400" width="400"/>
+                <div class="col-lg-4 UH">
+                    <img src="ProductImages/JL03373-YGP9EB_1_lar.jpg" alt="Necklace"/>
                     <p><a class="btn btn-default" href="Products.aspx" role="button">View More &raquo;</a></p>
                 </div>
-                <div class="col-lg-4">
-                    <img src="ProductImages/Rolex-watch.png" alt="Rolex Watch" height="400" width="400"/>
+                <div class="col-lg-4 UH">
+                    <img id="third-image" src="ProductImages/Rolex-watch.png" alt="Rolex Watch"/>
                     <p><a class="btn btn-default" href="Products.aspx" role="button">View More &raquo;</a></p>
                 </div>
 

@@ -11,9 +11,13 @@
     <br /><br /><br />
       <div class="row">
       <div class="col-md-12">
-          <button id="btnCart2" runat="server" class="btn btn-primary navbar-btn pull-right" onserverclick="btnCart2_ServerClick" type="button">
-                        Cart <span id="CartBadge" runat="server" class="badge"> 0 </span>
-                    </button>
+          <%--<button id="btnCart2" runat="server" class="btn btn-primary navbar-btn pull-right" onserverclick="btnCart2_ServerClick" type="button">
+              Cart <span id="CartBadge" runat="server" class="badge"> 0 </span>
+          </button>--%>
+          <asp:LinkButton ID="LinkButton1" CssClass="btn btn-primary navbar-btn pull-right" runat="server" OnClick="LinkButton1_Click">
+              Cart <span id="CartBadge" runat="server" class="badge">0</span>
+          </asp:LinkButton>
+
                     <h3>
                         <asp:Label ID="Label1" runat="server" Text="Showing All Products"></asp:Label>
                     </h3>

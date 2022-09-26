@@ -10,34 +10,46 @@
           <div class="row">
                <div class="col-sm-6">
                   <div class="form-group">
-                       <label> Enter ID:</label>
-                       <asp:TextBox ID="txtID" CssClass="form-control" runat="server" AutoPostBack="true"  ontextchanged="txtID_TextChanged"></asp:TextBox>
+                      <label> Enter ID:</label>
+                      <asp:TextBox ID="txtID" CssClass="form-control" runat="server" AutoPostBack="true"  ontextchanged="txtID_TextChanged"></asp:TextBox>
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidatorSizeID" runat="server" CssClass="text-danger" 
+                            ErrorMessage="Enter Size ID" ControlToValidate="txtID" ForeColor="Red"></asp:RequiredFieldValidator>
                   </div>
 
                   <div class="form-group">
-                       <label> Enter Size (L,S,XL)</label>
-                       <asp:TextBox ID="txtSize" CssClass="form-control" runat="server"></asp:TextBox>
+                      <label> Enter Size (L,S,XL)</label>
+                      <asp:TextBox ID="txtSize" CssClass="form-control" runat="server"></asp:TextBox>
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidatorSizeName" runat="server" CssClass="text-danger" 
+                            ErrorMessage="Enter Size Name" ControlToValidate="txtSize" ForeColor="Red"></asp:RequiredFieldValidator>
                   </div>
 
                   <div class="form-group">
-                       <label> Select Brand</label>
-                        <asp:DropDownList ID="ddlBrand" CssClass ="form-control" runat="server"></asp:DropDownList>
+                      <label> Select Brand</label>
+                      <asp:DropDownList ID="ddlBrand" CssClass ="form-control" runat="server"></asp:DropDownList>
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidatorddlBrand" runat="server" CssClass="text-danger" 
+                            ErrorMessage="Select Brand" ControlToValidate="ddlBrand" ForeColor="Red"></asp:RequiredFieldValidator>
                   </div>
 
                   <div class="form-group">
-                       <label> Select Category</label>
-                        <asp:DropDownList ID="ddlCategory" CssClass ="form-control" runat="server" 
+                      <label> Select Category</label>
+                      <asp:DropDownList ID="ddlCategory" CssClass ="form-control" runat="server" 
                             OnSelectedIndexChanged="ddlCategory_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidatorddlCat" runat="server" CssClass="text-danger" 
+                            ErrorMessage="Select Category" ControlToValidate="ddlCategory" ForeColor="Red"></asp:RequiredFieldValidator>
                   </div>
 
                   <div class="form-group">
-                       <label> Sub Category</label>
-                        <asp:DropDownList ID="ddlSubCategory" CssClass ="form-control" runat="server"></asp:DropDownList>
+                      <label> Sub Category</label>
+                      <asp:DropDownList ID="ddlSubCategory" CssClass ="form-control" runat="server"></asp:DropDownList>
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidatorddlSubCat" runat="server" CssClass="text-danger" 
+                            ErrorMessage="Select SubCategory" ControlToValidate="ddlSubCategory" ForeColor="Red"></asp:RequiredFieldValidator>
                   </div>
 
                   <div class="form-group">
-                       <label> Gender</label>
-                       <asp:DropDownList ID="ddlGender" CssClass ="form-control" runat="server"></asp:DropDownList>
+                      <label> Gender</label>
+                      <asp:DropDownList ID="ddlGender" CssClass ="form-control" runat="server"></asp:DropDownList>
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidatorddlGender" runat="server" CssClass="text-danger" 
+                            ErrorMessage="Select Gender" ControlToValidate="ddlGender" ForeColor="Red"></asp:RequiredFieldValidator>
                   </div>
                   <div class="form-group">
                   <asp:Button ID="btnUpdateSubCategory" CssClass="btn btn-primary" runat="server" Text="UPDATE" onclick="btnUpdateSubCategory_Click" />
@@ -76,6 +88,7 @@
 
 
 <script type="text/javascript">
+    document.getElementById("txtFilterGrid1Record").onkeyup = function () { Search_Gridview(strKey) };
     function Search_Gridview(strKey) {
         var strData = strKey.value.toLowerCase().split(" ");
         var tblData = document.getElementById("<%=GridView1.ClientID %>");
