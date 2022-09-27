@@ -290,14 +290,19 @@ namespace ShoppingSite
                 }
             }
         }
+        //protected void btnCart2_ServerClick(object sender, EventArgs e)
+        //{
+        //    Response.Redirect("Cart.aspx");
+        //}
 
-        protected void btnBuy_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Payment.aspx");
-        }
-        protected void btnCart2_ServerClick(object sender, EventArgs e)
+        protected void btnCart2_Click(object sender, EventArgs e)
         {
             Response.Redirect("Cart.aspx");
+        }
+
+        protected void btnBuyNow_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Payment.aspx");
         }
     }
 }

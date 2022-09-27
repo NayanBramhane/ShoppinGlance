@@ -17,9 +17,12 @@
             <div class="container">
                 <br />
                 <br />
-                    <button id="btnCart2" runat="server" class="btn btn-primary navbar-btn pull-right" onserverclick="btnCart2_ServerClick" type="button">
+                    <%--<button id="btnCart2" runat="server" class="btn btn-primary navbar-btn pull-right" onserverclick="btnCart2_ServerClick" type="button">
                         Cart <span id="CartBadge" runat="server" class="badge">0</span>
-                    </button>
+                    </button>--%>
+                <asp:LinkButton ID="btnCart2" CssClass="btn btn-primary navbar-btn pull-right" runat="server" OnClick="btnCart2_Click">
+                    Cart <span id="CartBadge" runat="server" class="badge">0</span>
+                </asp:LinkButton>
 
     <div style="padding-bottom:50px">
 
@@ -36,7 +39,7 @@
 
             <%--Show Cart Details Start--%>
 
-            <div class="media" style="border:1px solid black">
+            <div class="media" style="border:1px solid black; background-color:#FBF2CF">
                 <div class="media-left">
                     <a href="ProductView.aspx?PID=<%# Eval("PID") %>" target="_blank">
                         <img class="media-object" width="100" src="Images/ProductImages/<%# Eval("PID") %>/<%# Eval("Name") %><%# Eval("Extension") %>" alt="<%# Eval("Name") %>" onerror="this.src='Images/NoImg.jpeg'"/>
@@ -44,7 +47,7 @@
                 </div>
                 <div class="media-body">
                     <h4 class="media-heading pro-name-view-cart"><%# Eval("PName") %></h4>
-                    <p class="pro-price-discount-view">Size : <%# Eval("SizeNamee") %></p>
+                    <%--<p class="pro-price-discount-view">Size : <%# Eval("PSizeName") %></p>--%>
                     <span class="pro-price-view">Rs.&nbsp; <%# Eval("PSellPrice","{0:0.00}") %></span>
                     <span class="pro-og-price-view">Rs.&nbsp; <%# Eval("PPrice","{0:0.00}") %></span>
 
@@ -61,12 +64,12 @@
                     </div>
                     <br />
 
-                    <div>
-                        <asp:Button CommandArgument="'<%#Eval("CartID") %>'" CommandName="RemoveThisCart" ID="btnRemoveCart" 
+                    <p>
+                        <asp:Button CommandArgument='<%#Eval("CartID") %>' CommandName="RemoveThisCart" ID="btnRemoveCart" 
                             CssClass="remove-cart-button" runat="server" Text="Remove"/>
                         <br />
                         <span class="pro-name-view-cart pull-right">SubTotal: Rs.&nbsp; <%# Eval("SubSAmount","{0:0.00}") %></span>
-                    </div>
+                    </p>
                 </div>
             </div>
 
@@ -139,7 +142,6 @@
 
                      <div>
                          <asp:Button ID="btnBuyNow" CssClass="buy-now-btn" runat="server" OnClick="btnBuyNow_Click" Text="Buy Now" />
-
                      </div>
 
                  </div>

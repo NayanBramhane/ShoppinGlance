@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" target="_blank" href="css/mystyle.css">
 
 </head>
-<body style="background-color:burlywood">
+<body id="BackgroundImg"><%--style="background-color:burlywood"--%>
     <form id="form1" runat="server">
 
         

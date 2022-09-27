@@ -47,7 +47,7 @@ namespace ShoppingSite
         {
             using (MySqlConnection con = new MySqlConnection(CS))
             {
-                using (MySqlCommand cmd = new MySqlCommand("procBindAllProducts4", con))
+                using (MySqlCommand cmd = new MySqlCommand("procBindAllProductsManDenims", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd))

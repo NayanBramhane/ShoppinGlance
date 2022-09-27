@@ -39,7 +39,7 @@
                 <div class="col-sm-3 col-md-3">
                    <a href="ProductView.aspx?PID=<%# Eval("PID") %>" >
                     
-                    <div class="thumbnail">
+                    <div class="thumbnail" style="border: 2px solid rebeccapurple;">
                         <img src="Images/ProductImages/<%# Eval("PID") %>/<%# Eval("ImageName") %><%# Eval("Extension") %>" alt="<%# Eval("ImageName") %>"/>
                         <div class="caption">
                             <div class="pro-brand"><%# Eval("BrandName") %></div>

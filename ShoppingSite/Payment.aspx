@@ -11,9 +11,12 @@
 
     <br /><br />
 
-    <button id="btnCart2" runat="server" class="btn btn-primary navbar-btn pull-right" onserverclick="btnCart2_ServerClick" type="button">
+    <%--<button id="btnCart2" runat="server" class="btn btn-primary navbar-btn pull-right" onserverclick="btnCart2_ServerClick" type="button">
         Cart <span id="CartBadge" runat="server" class="badge">0</span>
-    </button>
+    </button>--%>
+    <asp:LinkButton ID="btnCart2" CssClass="btn btn-primary navbar-btn pull-right" runat="server" OnClick="btnCart2_Click">
+        Cart<span id="CartBadge" runat="server" class="badge">0</span>
+    </asp:LinkButton>
     <br />
     <div class="row" style="padding-top: 20px;">
         
@@ -76,20 +79,20 @@
 
         <div class="col-md-3" runat="server" id="divPriceDetails">
              <div style="border-bottom: 1px solid #eaeaec;">
-                <h5 class="proNameViewCart">PRICE DETAILS</h5>
+                <h5 class="pro-name-view-cart">PRICE DETAILS</h5>
                 <div>
                     <label>Cart Total</label>
-                    <span class="float-right priceGray" id="spanCartTotal" runat="server"></span>
+                    <span class="float-right price-gray" id="spanCartTotal" runat="server"></span>
                 </div>
 
                 <div>
                     <label>Cart Discount</label>
-                    <span class="float-right priceGreen" id="spanDiscount" runat="server"></span>
+                    <span class="float-right price-green" id="spanDiscount" runat="server"></span>
                 </div>
             </div>
 
             <div>
-                <div class="proPriceView">
+                <div class="pro-price-view">
                     <label>Total</label>
                     <span class="float-right" id="spanTotal" runat="server"></span>
                 </div>

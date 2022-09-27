@@ -10,7 +10,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link href="css/mystyle.css" rel="stylesheet" runat="server" />
 </head>
-<body>
+<body id="BackgroundImg">
     <form id="form1" runat="server">
         <div>
       <div>

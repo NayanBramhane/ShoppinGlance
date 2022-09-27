@@ -75,8 +75,7 @@ namespace ShoppingSite
         private void genAutoNum()
         {
             Random r = new Random();
-            int num = r.Next(Convert.ToInt32("231965"),
-           Convert.ToInt32("987654"));
+            int num = r.Next(Convert.ToInt32("231965"), Convert.ToInt32("987654"));
             string ChkOrderNum = num.ToString();
             using (MySqlConnection con = new MySqlConnection(CS))
             {
@@ -216,6 +215,7 @@ namespace ShoppingSite
 
                     con.Open();
                     Int64 PurchaseID = Convert.ToInt64(cmd.ExecuteScalar());
+                    InsertOrderProducts();
                 }
             }
             else
@@ -224,10 +224,10 @@ namespace ShoppingSite
             }
         }
 
-        protected void btnCart2_ServerClick(object sender, EventArgs e)
-        {
-            Response.Redirect("Cart.aspx");
-        }
+        //protected void btnCart2_ServerClick(object sender, EventArgs e)
+        //{
+        //    Response.Redirect("Cart.aspx");
+        //}
 
         protected void BtnPlaceNPay_Click(object sender, EventArgs e)
         {
@@ -312,6 +312,11 @@ namespace ShoppingSite
                 cmdU.ExecuteNonQuery();
                 con.Close();
             }
+        }
+
+        protected void btnCart2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Cart.aspx");
         }
     }
 }

@@ -15,7 +15,7 @@
     
     <br />
 
-    <div style="padding-top:50px">
+    <div style="padding-top:50px;">
 
         <!--- Success Alert --->
         <div id="divSuccess" runat="server" class="alert alert-success alert-dismissible fade in h4">
@@ -42,7 +42,7 @@
 
       <asp:Repeater ID="rptrImage" runat="server">
           <ItemTemplate>
-           <div class="item <%# GetActiveImgClass(Container.ItemIndex) %>">
+           <div class="item <%# GetActiveImgClass(Container.ItemIndex) %>" style="border: 2px solid rebeccapurple;">
                 <img src="Images/ProductImages/<%# Eval("PID") %>/<%# Eval("Name") %><%# Eval("Extension") %>" alt="<%# Eval("Name") %>" onerror="this.src='Images/NoImg.jpeg'"/>
             
            </div>
@@ -65,7 +65,7 @@
                 <!---------------------------------- Product Image Slider End ------------------------------------------->
             </div>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-5" style="background-color:#FBF2CF;">
             <%--OnItemCommand="rptrProductDetails_ItemCommand"-----This attribute was inside below repeater control--%>
             <asp:Repeater ID="rptrProductDetails" runat="server" OnItemDataBound="rptrProductDetails_ItemDataBound">
             <ItemTemplate>
