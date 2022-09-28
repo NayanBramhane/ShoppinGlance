@@ -157,23 +157,23 @@ namespace ShoppingSite
             if (SelectedSize!="")
             {
                 Int64 PID = Convert.ToInt64(Request.QueryString["PID"]);
-                //if (Request.Cookies["CartPID"]!=null)
-                //{
-                //    string CookiePID = Request.Cookies["CartPID"].Value.Split('=')[1];
-                //    CookiePID = CookiePID + "," + PID + "-" + SelectedSize;
+                if (Request.Cookies["CartPID"] != null)
+                {
+                    string CookiePID = Request.Cookies["CartPID"].Value.Split('=')[1];
+                    CookiePID = CookiePID + "," + PID + "-" + SelectedSize;
 
-                //    HttpCookie CartProducts = new HttpCookie("CartPID");
-                //    CartProducts.Values["CartPID"] = PID.ToString();
-                //    CartProducts.Expires = DateTime.Now.AddDays(30);
-                //    Response.Cookies.Add(CartProducts);
-                //}
-                //else
-                //{
-                //    HttpCookie CartProducts = new HttpCookie("CartPID");
-                //    CartProducts.Values["CartPID"] = PID.ToString();
-                //    CartProducts.Expires = DateTime.Now.AddDays(30);
-                //    Response.Cookies.Add(CartProducts);
-                //}
+                    HttpCookie CartProducts = new HttpCookie("CartPID");
+                    CartProducts.Values["CartPID"] = PID.ToString();
+                    CartProducts.Expires = DateTime.Now.AddDays(30);
+                    Response.Cookies.Add(CartProducts);
+                }
+                else
+                {
+                    HttpCookie CartProducts = new HttpCookie("CartPID");
+                    CartProducts.Values["CartPID"] = PID.ToString();
+                    CartProducts.Expires = DateTime.Now.AddDays(30);
+                    Response.Cookies.Add(CartProducts);
+                }
                 AddToCartProduction();
                 Response.Redirect("~/ProductView.aspx?PID=" + PID);
             }

@@ -273,7 +273,31 @@ namespace ShoppingSite
                 }
             }
             else if (e.CommandName == "RemoveThisCart")
-            {
+            {   /*  -------Remove Cookie Start------- */
+                string CookiePID = Request.Cookies["CartPID"].Value.Split('=')[1];
+
+                //Button btn = (Button)sender;
+
+                string PIDSIZE = e.CommandArgument.ToString();
+
+                List<string> CookiePIDList = CookiePID.Split(',').Select(i => i.Trim()).Where(i => i != string.Empty).ToList();
+                CookiePIDList.Remove(PIDSIZE);
+                string CookiePIDUpdated = String.Join(",", CookiePIDList.ToArray());
+                if (CookiePIDUpdated == "")
+                {
+                    HttpCookie CartProducts = Request.Cookies["CartPID"];
+                    CartProducts.Values["CartPID"] = null;
+                    CartProducts.Expires = DateTime.Now.AddDays(-1);
+                    Response.Cookies.Add(CartProducts);
+                }
+                else
+                {
+                    HttpCookie CartProducts = Request.Cookies["CartPID"];
+                    CartProducts.Values["CartPID"] = CookiePIDUpdated;
+                    CartProducts.Expires = DateTime.Now.AddDays(30);
+                    Response.Cookies.Add(CartProducts);
+                }
+                /*  -------Remove Cookie End------- */
                 int CartPID = Convert.ToInt32(e.CommandArgument.ToString().Trim());
                 using (MySqlConnection con = new MySqlConnection(CS))
                 {
