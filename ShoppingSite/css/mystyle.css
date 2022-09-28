@@ -301,9 +301,15 @@ label.contact {
     background-color:white;
 }
 
-/*      Background Image for all respetive body tags        */
+/*      Background Images for all respetive body tags        */
 #BackgroundImg {
     background-image: url('/BackgroundImage/pexels-karolina-grabowska-4194853.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+#AdminBgImg {
+    background-image: url('/backgroundimage/pexels-miguel-á-padriñán-19670.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

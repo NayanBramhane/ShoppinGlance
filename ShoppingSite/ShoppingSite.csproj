@@ -240,8 +240,9 @@
     <Content Include="AddProduct.aspx" />
     <Content Include="AddSize.aspx" />
     <Content Include="AdminHome.aspx" />
+    <Content Include="BackgroundImage\pexels-evie-shaffer-2395253.jpg" />
     <Content Include="BackgroundImage\pexels-karolina-grabowska-4194853.jpg" />
-    <Content Include="BackgroundImage\pexels-rovenimagescom-949587.jpg" />
+    <Content Include="BackgroundImage\pexels-miguel-á-padriñán-19670.jpg" />
     <Content Include="BackgroundImage\polygon-img.png" />
     <Content Include="Cart.aspx" />
     <Content Include="CircularImages\Dress-circle.jpeg" />
