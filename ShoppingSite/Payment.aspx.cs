@@ -7,7 +7,6 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Configuration;
 using MySql.Data.MySqlClient;
-using System.Security.Cryptography.X509Certificates;
 
 namespace ShoppingSite
 {
@@ -21,7 +20,7 @@ namespace ShoppingSite
             {
                 if (!IsPostBack)
                 {
-                    BindPriceData();
+                    //BindPriceData();
                     genAutoNum();
                     BindCartNumber();
                     BindOrderProducts();
@@ -262,8 +261,9 @@ namespace ShoppingSite
                     cmd.Parameters.AddWithValue("_OrderStatus", OrderStatus);
                     cmd.Parameters.AddWithValue("_OrderNumber", OrderNumber.ToString());
                     if (con.State == ConnectionState.Closed) { con.Open(); }
-                    Int64 OrderID = Convert.ToInt64(cmd.ExecuteScalar());
-                    InsertOrderProducts();
+                    //Int64 OrderID = Convert.ToInt64(cmd.ExecuteScalar());
+                    //InsertOrderProducts();
+                    Response.Redirect("Success.aspx");
                 }
             }
             else

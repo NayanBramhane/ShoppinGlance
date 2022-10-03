@@ -23,7 +23,7 @@ namespace ShoppingSite
                 {
                     if (Request.QueryString["BuyNow"] == "YES")
                     {
-
+                        Response.Redirect("~/Cart.aspx");
                     }
                     BindProductRepeater();
                     BindCartNumber();

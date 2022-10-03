@@ -43,12 +43,16 @@
                     <asp:TextBox ID="txtPinCode" CssClass="form-control" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" CssClass="text-danger" runat="server" 
                         ErrorMessage="Enter Pincode" ControlToValidate="txtPinCode"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ControlToValidate="txtPinCode" runat="server" CssClass="text-danger" 
+                        ErrorMessage="Enter Pincode Correctly" ValidationExpression="\d{6}"></asp:RegularExpressionValidator>
                 </div>
                 <div class="form-group">
                     <asp:Label ID="Label4" runat="server" CssClass="control-label" Text="Mobile Number"></asp:Label>
                     <asp:TextBox ID="txtMobileNumber" CssClass="form-control" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" CssClass="text-danger" runat="server" 
                         ErrorMessage="Enter Mobile Number" ControlToValidate="txtMobileNumber"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Enter Correct Number" 
+                        CssClass="text-danger" ForeColor="Red" ControlToValidate="txtMobileNumber" ValidationExpression="\d{10}"></asp:RegularExpressionValidator>
                 </div>
             </div>
 
