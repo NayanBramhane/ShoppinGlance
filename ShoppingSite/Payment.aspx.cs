@@ -213,8 +213,9 @@ namespace ShoppingSite
                         "','" + txtMobileNumber.Text.Trim() + "')Select LAST_INSERT_ID()", con);
 
                     con.Open();
-                    Int64 PurchaseID = Convert.ToInt64(cmd.ExecuteScalar());
-                    InsertOrderProducts();
+                    //Int64 PurchaseID = Convert.ToInt64(cmd.ExecuteScalar());
+                    //InsertOrderProducts();
+                    Response.Redirect("Success.aspx");
                 }
             }
             else

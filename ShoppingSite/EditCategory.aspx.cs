@@ -32,8 +32,8 @@ namespace ShoppingSite
         {
             MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["MyShoppingDB"].ConnectionString);
             if (con.State == ConnectionState.Closed) { con.Open(); }
-            MySqlCommand cmd = new MySqlCommand("select CatName from tblCategory where CatID=_ID", con);
-            cmd.Parameters.AddWithValue("_ID", Convert.ToInt32(txtID.Text));
+            MySqlCommand cmd = new MySqlCommand("select CatName from tblCategory where CatID = @ID", con);
+            cmd.Parameters.AddWithValue("@ID", Convert.ToInt32(txtID.Text));
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             DataTable dt = new DataTable();
@@ -57,9 +57,9 @@ namespace ShoppingSite
         {
             MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["MyShoppingDB"].ConnectionString);
             if (con.State == ConnectionState.Closed) { con.Open(); }
-            MySqlCommand cmd = new MySqlCommand("update tblCategory set CatName=_Name where CatID=_ID", con);
-            cmd.Parameters.AddWithValue("_ID", Convert.ToInt32(txtID.Text.Trim()));
-            cmd.Parameters.AddWithValue("_Name", txtUpdateCatName.Text.Trim());
+            MySqlCommand cmd = new MySqlCommand("update tblCategory set CatName = @Name where CatID = @ID", con);
+            cmd.Parameters.AddWithValue("@ID", Convert.ToInt32(txtID.Text.Trim()));
+            cmd.Parameters.AddWithValue("@Name", txtUpdateCatName.Text.Trim());
             cmd.ExecuteNonQuery();
             con.Close();
             Response.Write("<script>alert('Update successfully')</script>");

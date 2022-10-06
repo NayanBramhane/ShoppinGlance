@@ -30,8 +30,8 @@ namespace ShoppingSite
         {
             MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["MyShoppingDB"].ConnectionString);
             if (con.State == ConnectionState.Closed) { con.Open(); }
-            MySqlCommand cmd = new MySqlCommand("select SizeName,BrandID,CategoryID,SubCategoryID,GenderID from tblSizes where SizeID=_ID", con);
-            cmd.Parameters.AddWithValue("_ID", Convert.ToInt32(txtID.Text));
+            MySqlCommand cmd = new MySqlCommand("select SizeName,BrandID,CategoryID,SubCategoryID,GenderID from tblSizes where SizeID = @ID", con);
+            cmd.Parameters.AddWithValue("@ID", Convert.ToInt32(txtID.Text));
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             DataTable dt = new DataTable();
@@ -117,14 +117,14 @@ namespace ShoppingSite
             {
                 MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["MyShoppingDB"].ConnectionString);
                 if (con.State == ConnectionState.Closed) { con.Open(); }
-                MySqlCommand cmd = new MySqlCommand("update tblSizes set SizeName=_SizeName,BrandID=_BrandID,CategoryID=_CategoryID," +
-                    "SubCategoryID=_SubCategoryID,GenderID=_GenderID where SizeID=_SizeID", con);
-                cmd.Parameters.AddWithValue("_SizeID", Convert.ToInt32(txtID.Text.Trim()));
-                cmd.Parameters.AddWithValue("_CategoryID", ddlCategory.SelectedValue);
-                cmd.Parameters.AddWithValue("_SubCategoryID", ddlSubCategory.SelectedValue);
-                cmd.Parameters.AddWithValue("_BrandID", ddlBrand.SelectedValue);
-                cmd.Parameters.AddWithValue("_GenderID", ddlGender.SelectedValue);
-                cmd.Parameters.AddWithValue("_SizeName", txtSize.Text.Trim());
+                MySqlCommand cmd = new MySqlCommand("update tblSizes set SizeName = @SizeName,BrandID = @BrandID,CategoryID = @CategoryID," +
+                    "SubCategoryID = @SubCategoryID,GenderID = @GenderID where SizeID = @SizeID", con);
+                cmd.Parameters.AddWithValue("@SizeID", Convert.ToInt32(txtID.Text.Trim()));
+                cmd.Parameters.AddWithValue("@CategoryID", ddlCategory.SelectedValue);
+                cmd.Parameters.AddWithValue("@SubCategoryID", ddlSubCategory.SelectedValue);
+                cmd.Parameters.AddWithValue("@BrandID", ddlBrand.SelectedValue);
+                cmd.Parameters.AddWithValue("@GenderID", ddlGender.SelectedValue);
+                cmd.Parameters.AddWithValue("@SizeName", txtSize.Text.Trim());
                 cmd.ExecuteNonQuery();
                 con.Close();
                 Response.Write("<script>alert('Update successfully')</script>");
